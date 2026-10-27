@@ -13,6 +13,12 @@ Exomaly là bộ công cụ web nhỏ, gọn, chú trọng quyền riêng tư: x
 | **Exomaly Remux** | Sửa container của file MP4 trước khi đăng lên TikTok; hình và tiếng giữ nguyên từng byte | [upload.exomaly.com](https://upload.exomaly.com) |
 | **Exomaly Upscale** | Phóng ảnh lên 2K hoặc 4K ngay trong trình duyệt, ảnh không rời khỏi máy bạn | [upscale.exomaly.com](https://upscale.exomaly.com) |
 
+## Sắp ra mắt
+
+| Sản phẩm | Làm gì |
+|---|---|
+| **Exomaly SarangSon** | Chụp hoặc chọn ảnh có chữ Hàn (viết tay hoặc in), nhận bản dịch tiếng Việt phủ lên ảnh kèm danh sách từ vựng, có nút đọc to để nghe phát âm |
+
 Mã nguồn các sản phẩm nằm ở kho riêng tư. Bản phát hành của Download có tại [exomaly-download](https://github.com/TruongDangKhoa-DS/exomaly-download).
 
 ## Liên hệ
@@ -34,6 +40,12 @@ Exomaly is a small set of web tools built with privacy in mind: processing happe
 | **Exomaly Download** | Download YouTube, Facebook, Instagram and TikTok videos in high quality (up to 4K) or extract MP3 / M4A audio; Windows app and web version | [download.exomaly.com](https://download.exomaly.com) |
 | **Exomaly Remux** | Fixes the container of an MP4 file before posting to TikTok; picture and sound stay byte-for-byte identical | [upload.exomaly.com](https://upload.exomaly.com) |
 | **Exomaly Upscale** | Upscales images to 2K or 4K right in the browser; your image never leaves your device | [upscale.exomaly.com](https://upscale.exomaly.com) |
+
+### Coming soon
+
+| Product | What it does |
+|---|---|
+| **Exomaly SarangSon** | Take or pick a photo with Korean text (handwritten or printed) and get a Vietnamese translation overlaid on the image, with a vocabulary list and a read-aloud button for pronunciation |
 
 Source code is kept in private repositories. Download release builds are available at [exomaly-download](https://github.com/TruongDangKhoa-DS/exomaly-download).
 
