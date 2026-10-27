@@ -1,0 +1,428 @@
+{
+  "products": [
+    {
+      "slug": "home",
+      "name": "Exomaly",
+      "url": "https://exomaly.com",
+      "accent": "#8B5CF6",
+      "asof": "2026-10-22",
+      "tagline": {
+        "vi": "Trang chủ thương hiệu: bầu trời đổi theo giờ và thời tiết nơi bạn đứng, mỗi công cụ là một hành tinh.",
+        "en": "Brand home page: a sky that follows the time and weather where you are, with each tool as a planet."
+      },
+      "summary": {
+        "vi": [
+          "Một trang tĩnh (HTML, CSS, JavaScript thuần), không cookie, không tải gì từ máy chủ khác khi mở trang: phông chữ tự lưu, hiệu ứng làm bằng CSS, video nền khoảng 1 MB.",
+          "Bầu trời theo giờ và thời tiết nơi khách đứng: vị trí cấp thành phố (làm tròn 0,1 độ) do hạ tầng cung cấp nên không hiện hộp xin quyền, thời tiết lấy từ MET Norway (CC BY 4.0) và lưu tạm 30 phút.",
+          "Hành tinh thành hạt: cuộn khỏi phần đầu trang thì hành tinh lớn tan thành bụi, đến phần công cụ thì các hạt từ từ khép lại thành hình các hành tinh. Tất cả vẽ trên một canvas, màu lấy từ chính ảnh hành tinh.",
+          "Tôn trọng chế độ giảm chuyển động của hệ điều hành. Video YouTube chỉ tải khi khách bấm. Thống kê lượt xem tự làm và được nói rõ ở chân trang."
+        ],
+        "en": [
+          "A static page (plain HTML, CSS, JavaScript), no cookies, nothing loaded from another server when the page opens: self-hosted fonts, effects made with CSS, a background video of about 1 MB.",
+          "The sky follows the time and weather where the visitor is: a city-level position (rounded to 0.1 degree) supplied by the hosting layer, so there is no permission prompt; weather from MET Norway (CC BY 4.0), cached for 30 minutes.",
+          "Planets as particles: scrolling away from the top dissolves the big planet into dust, and at the tools section the particles slowly close into the shape of the planets. Everything is drawn on one canvas, with colours taken from the planet pictures themselves.",
+          "Respects the operating system's reduced-motion setting. The YouTube video loads only when the visitor clicks. Visit statistics are home-made and disclosed in the footer."
+        ]
+      },
+      "stats": [
+        {"v": "141/141", "vi": "kiểm tra trong Chrome thật: bố cục, chuyển động, mọi kiểu thời tiết, VI/EN, điện thoại", "en": "checks in a real Chrome: layout, motion, every weather, VI/EN, phones"},
+        {"v": "56/56", "vi": "kiểm tra hiệu ứng hạt: cuộn, gom thành hình hành tinh, công tắc, phương án dự phòng, điện thoại", "en": "checks of the particles: scrolling, gathering into planet shapes, the switch, fallbacks, a phone"},
+        {"v": "65/65", "vi": "kiểm tra ảnh xem trước khi chia sẻ link cho các trang Exomaly", "en": "link-preview checks for the Exomaly pages"},
+        {"v": {"vi": "≤ 2 phút", "en": "≤ 2 min"}, "vi": "sai số giờ mặt trời mọc và lặn so với dữ liệu thật ở 5 thành phố", "en": "sunrise and sunset error against real data for 5 cities"},
+        {"v": "8.855", "vi": "dòng code (JavaScript, Python, CSS, HTML)", "en": "lines of code (JavaScript, Python, CSS, HTML)"}
+      ],
+      "decisions": [
+        {
+          "what": {"vi": "Thời tiết từ MET Norway, gọi qua máy chủ, lưu tạm 30 phút", "en": "Weather from MET Norway, called through the server, cached for 30 minutes"},
+          "why": {"vi": "Giấy phép CC BY 4.0 cho phép trang thương mại, chỉ cần ghi nguồn", "en": "The CC BY 4.0 licence allows a commercial site with credit"},
+          "alt": {"vi": "Open-Meteo (điều khoản chỉ cho phép phi thương mại)", "en": "Open-Meteo (its terms allow non-commercial use only)"}
+        },
+        {
+          "what": {"vi": "Vị trí cấp thành phố do hạ tầng cung cấp", "en": "City-level position supplied by the hosting layer"},
+          "why": {"vi": "Không hiện hộp hỏi quyền vị trí", "en": "No location permission prompt"},
+          "alt": {"vi": "Hỏi vị trí của trình duyệt", "en": "Asking for the browser's location"}
+        },
+        {
+          "what": {"vi": "Phông chữ tự lưu trong repo", "en": "Fonts self-hosted in the repo"},
+          "why": {"vi": "Trang không gửi địa chỉ IP của khách tới Google", "en": "The page does not send visitors' IP addresses to Google"},
+          "alt": {"vi": "Tải phông từ Google Fonts", "en": "Loading the fonts from Google Fonts"}
+        },
+        {
+          "what": {"vi": "Video YouTube chỉ tải khi khách bấm", "en": "The YouTube video loads only on click"},
+          "why": {"vi": "Trang không gửi yêu cầu nào tới YouTube trước đó", "en": "The page sends no request to YouTube before that"},
+          "alt": {"vi": "Nhúng khung YouTube ngay từ đầu", "en": "Embedding the YouTube frame up front"}
+        },
+        {
+          "what": {"vi": "Chỉ có ngày và đêm", "en": "Only day and night"},
+          "why": {"vi": "Ánh sáng ấm của bình minh và hoàng hôn làm hành tinh bị nhạt", "en": "The warm light of dawn and dusk washed the planet out"},
+          "alt": {"vi": "Bốn buổi trong ngày", "en": "Four times of day"}
+        },
+        {
+          "what": {"vi": "Hạt chỉ chở phần chuyển cảnh, ảnh hành tinh thật vẫn là ảnh", "en": "The particles only carry the transition, the real planet pictures stay pictures"},
+          "why": {"vi": "Khoảng 900 chấm không vẽ nổi phần thân tối và quầng sáng mềm của hành tinh", "en": "About 900 dots cannot draw a planet's dark body and soft glow"},
+          "alt": {"vi": "Thay hẳn ảnh hành tinh bằng hạt", "en": "Replacing the planet pictures with particles altogether"}
+        }
+      ],
+      "verify": {
+        "vi": [
+          "Trang được kiểm trong Chrome thật: bố cục, chuyển động, mọi kiểu thời tiết, hai ngôn ngữ và điện thoại.",
+          "Công thức giờ mặt trời mọc và lặn được đối chiếu với dữ liệu thật ở 5 thành phố.",
+          "Mỗi quy tắc của dự án có một kiểm tra tự động, và kiểm tra đó được chứng minh bằng cách cài lỗi cố ý cho nó bắt."
+        ],
+        "en": [
+          "The page is checked in a real Chrome: layout, motion, every weather, both languages and phones.",
+          "The sunrise and sunset formula is compared with real data for 5 cities.",
+          "Each project rule has an automatic check, and each check is proven by a deliberate mistake it must catch."
+        ]
+      }
+    },
+    {
+      "slug": "download",
+      "name": "Exomaly Download",
+      "url": "https://download.exomaly.com",
+      "accent": "#8B5CF6",
+      "asof": "2026-10-11",
+      "tagline": {
+        "vi": "Tải video YouTube, Facebook, Instagram, TikTok đến 4K hoặc tách âm thanh MP3 / M4A, bằng app trên máy tính.",
+        "en": "Download YouTube, Facebook, Instagram and TikTok videos up to 4K, or extract MP3 / M4A audio, with an app on your PC."
+      },
+      "summary": {
+        "vi": [
+          "Là app trên máy tính, không phải trang web: YouTube chặn địa chỉ IP của máy chủ và các nền tảng chặn đọc chéo trang trong trình duyệt. App chạy ngay trên máy người dùng nên tránh được cả hai.",
+          "Không tự viết bộ tách video: dùng yt-dlp và FFmpeg, hai dự án mở đang được bảo trì liên tục. yt-dlp tự cập nhật mỗi 6 giờ.",
+          "Bản cài đặt nằm ở GitHub Releases, trang web chỉ làm nhiệm vụ giới thiệu và bán key."
+        ],
+        "en": [
+          "An app on the PC, not a website: YouTube blocks server IP addresses and the platforms block cross-site reads in the browser. An app on the user's machine avoids both.",
+          "No home-made extractor: it uses yt-dlp and FFmpeg, two actively maintained open projects. yt-dlp updates itself every 6 hours.",
+          "The installer lives on GitHub Releases; the website only presents the app and sells keys."
+        ]
+      },
+      "stats": [
+        {"v": "26", "vi": "file test: Python, Chrome điều khiển qua CDP, Node", "en": "test files: Python, Chrome driven over CDP, Node"},
+        {"v": "38/38", "vi": "kiểm tra link: chỉ nhận tên miền của 4 nền tảng", "en": "link checks: only the 4 platforms' own domains are accepted"},
+        {"v": "23/23", "vi": "kiểm tra tự cập nhật: chỉ nhận bản phát hành của chính app, kiểm kích thước và mã băm", "en": "self-update checks: only the app's own releases, size and checksum verified"},
+        {"v": "12/12", "vi": "kiểm tra trên trang thật sau lần phát hành gần nhất", "en": "checks on the live site after the latest release"},
+        {"v": "11.818", "vi": "dòng code (Python, JavaScript, HTML, CSS, SQL, PowerShell)", "en": "lines of code (Python, JavaScript, HTML, CSS, SQL, PowerShell)"}
+      ],
+      "decisions": [
+        {
+          "what": {"vi": "App Windows chạy một máy chủ nhỏ ngay trên máy người dùng", "en": "A Windows app running a small server on the user's PC"},
+          "why": {"vi": "YouTube chặn IP máy chủ; các nền tảng chặn đọc chéo trang", "en": "YouTube blocks server IPs; platforms block cross-site reads"},
+          "alt": {"vi": "Trang web tải video qua máy chủ", "en": "A website that downloads through a server"}
+        },
+        {
+          "what": {"vi": "yt-dlp và FFmpeg", "en": "yt-dlp and FFmpeg"},
+          "why": {"vi": "Thư viện mở, theo kịp thay đổi của các nền tảng", "en": "Open libraries that follow the platforms' changes"},
+          "alt": {"vi": "Tự viết bộ tách video", "en": "A home-made extractor"}
+        },
+        {
+          "what": {"vi": "Bản cài đặt đặt ở GitHub Releases", "en": "Installer on GitHub Releases"},
+          "why": {"vi": "Nơi lưu trang web không nhận file quá 25 MiB", "en": "The website host refuses files over 25 MiB"},
+          "alt": {"vi": "Đặt chung với trang web", "en": "Hosting it with the website"}
+        },
+        {
+          "what": {"vi": "Giới hạn ở 4K", "en": "A 4K cap"},
+          "why": {"vi": "Bộ mã hoá H.264 của NVIDIA dừng ở chiều ngang 4096 px", "en": "NVIDIA's H.264 encoder stops at 4096 px wide"},
+          "alt": {"vi": "Mời tải 8K", "en": "Offering 8K"}
+        }
+      ],
+      "verify": {
+        "vi": [
+          "26 file test chạy bằng Python, Chrome điều khiển qua CDP và Node.",
+          "Bộ kiểm tra link và bộ kiểm tra tự cập nhật có đủ ca đúng lẫn ca xấu (link lạ, file sai kích thước, mã băm không khớp).",
+          "Sau mỗi lần phát hành, trang thật được kiểm lại."
+        ],
+        "en": [
+          "26 test files run with Python, Chrome driven over CDP, and Node.",
+          "The link checks and self-update checks cover both good and bad cases (foreign links, wrong file size, checksum mismatch).",
+          "After every release, the live site is checked again."
+        ]
+      }
+    },
+    {
+      "slug": "remux",
+      "name": "Exomaly Remux",
+      "url": "https://upload.exomaly.com",
+      "accent": "#FF3B4E",
+      "asof": "2026-10-10",
+      "tagline": {
+        "vi": "Sửa container của file MP4 trước khi đăng lên TikTok, hình và tiếng giữ nguyên từng byte.",
+        "en": "Fixes the container of an MP4 file before posting to TikTok, picture and sound unchanged byte for byte."
+      },
+      "summary": {
+        "vi": [
+          "Không mã hoá lại: dữ liệu hình và tiếng của file ra bằng đúng file vào, từng byte, nên chất lượng không bao giờ đổi.",
+          "Hình và tiếng không rời máy: chỉ phần chỉ mục của file (khối moov) được gửi qua HTTPS tới máy chủ, xử lý trong bộ nhớ và không lưu.",
+          "Không framework, không bước build. Phông chữ tự lưu, trang không gọi Google Fonts."
+        ],
+        "en": [
+          "No re-encoding: the picture and sound data of the output equal the input byte for byte, so quality never changes.",
+          "Picture and sound never leave the device: only the file's index (the moov box) goes over HTTPS to the server, is processed in memory and is not stored.",
+          "No framework, no build step. Fonts are self-hosted, the page makes no call to Google Fonts."
+        ]
+      },
+      "stats": [
+        {"v": "190/190", "vi": "test Node trong 29 nhóm: xử lý file, máy chủ, cửa hàng, quy tắc", "en": "Node tests in 29 groups: file processing, server, shop, rules"},
+        {"v": "22/22", "vi": "test Python cho công cụ dòng lệnh mp4lab.py", "en": "Python tests for the mp4lab.py command-line tool"},
+        {"v": "34/34", "vi": "kiểm tra luồng trang trong Chrome: chỉ phần chỉ mục được gửi, kết quả khớp từng byte", "en": "page-flow checks in Chrome: only the index is sent, results match byte for byte"},
+        {"v": "25/25", "vi": "kiểm tra API trong môi trường chạy thật cục bộ với cơ sở dữ liệu cục bộ", "en": "API checks inside a local runtime with a local database"},
+        {"v": "17 / 90 ms", "vi": "thời gian CPU máy chủ cho video 4K 60 fps / video Full HD 60 fps dài 10 phút", "en": "server CPU for a 4K 60 fps test video / a 10-minute Full HD 60 fps video"},
+        {"v": "7.888", "vi": "dòng code (JavaScript, Python, CSS, HTML, SQL)", "en": "lines of code (JavaScript, Python, CSS, HTML, SQL)"}
+      ],
+      "decisions": [
+        {
+          "what": {"vi": "Chỉ sửa container", "en": "Fix the container only"},
+          "why": {"vi": "Chất lượng không đổi, nhanh, không cần ffmpeg", "en": "Quality unchanged, fast, no ffmpeg needed"},
+          "alt": {"vi": "Mã hoá lại video", "en": "Re-encoding the video"}
+        },
+        {
+          "what": {"vi": "Chỉ gửi phần chỉ mục lên máy chủ", "en": "Send only the index to the server"},
+          "why": {"vi": "Hình và tiếng ở lại trên máy của khách", "en": "Picture and sound stay on the device"},
+          "alt": {"vi": "Gửi cả file lên máy chủ", "en": "Uploading the whole file to the server"}
+        },
+        {
+          "what": {"vi": "Phông chữ tự lưu", "en": "Self-hosted fonts"},
+          "why": {"vi": "Trang chỉ nói chuyện với máy chủ của chính nó", "en": "The page talks only to its own server"},
+          "alt": {"vi": "Google Fonts", "en": "Google Fonts"}
+        },
+        {
+          "what": {"vi": "Không bước build, đóng dấu cache cho CSS và JS", "en": "No build step, cache stamps on CSS and JS"},
+          "why": {"vi": "Ít bộ phận chuyển động; khách không bao giờ gặp bản lẫn cũ và mới", "en": "Fewer moving parts; users never get a mix of old and new"},
+          "alt": {"vi": "npm và bundler", "en": "npm and a bundler"}
+        }
+      ],
+      "verify": {
+        "vi": [
+          "190 test Node và 22 test Python phủ xử lý file, máy chủ, cửa hàng và các quy tắc dự án.",
+          "Luồng trên trang được kiểm trong Chrome thật: chỉ phần chỉ mục được gửi và kết quả khớp từng byte với bản gốc.",
+          "API được kiểm trong môi trường chạy cục bộ với cơ sở dữ liệu cục bộ."
+        ],
+        "en": [
+          "190 Node tests and 22 Python tests cover file processing, the server, the shop and the project rules.",
+          "The page flow is checked in a real Chrome: only the index is sent and the output matches the original byte for byte.",
+          "The API is checked in a local runtime with a local database."
+        ]
+      }
+    },
+    {
+      "slug": "upscale",
+      "name": "Exomaly Upscale",
+      "url": "https://upscale.exomaly.com",
+      "accent": "#3BA4FF",
+      "asof": "2026-10-10",
+      "tagline": {
+        "vi": "Phóng ảnh lên 2K hoặc 4K ngay trong trình duyệt, ảnh không rời khỏi máy bạn.",
+        "en": "Upscales images to 2K or 4K right in the browser, your image never leaves your device."
+      },
+      "summary": {
+        "vi": [
+          "Ảnh không rời máy người dùng: không máy chủ xử lý, không tài khoản, không lưu ảnh. Mọi phép tính chạy trên card đồ hoạ (GPU) của chính máy đó: WebGPU, nếu không có thì WebGL, nếu không nữa thì CPU.",
+          "Miễn phí và không giới hạn lượt dùng, vì máy của người dùng làm việc: chủ dự án không phải trả tiền cho GPU máy chủ.",
+          "Bốn bộ lọc nâng cấp ảnh (giấy phép BSD-3): hai bản Nhanh (2,4 MB và 1,2 MB) đi kèm trang, hai bản Chất lượng cao (33,4 MB và 8,9 MB) chỉ tải khi được chọn.",
+          "Không framework, không bước build: HTML, CSS và 14 module ES chạy nguyên bản."
+        ],
+        "en": [
+          "Images never leave the user's device: no processing server, no account, no stored images. All the maths runs on that device's own GPU: WebGPU, else WebGL, else CPU.",
+          "Free with no usage cap, because the user's device does the work: the owner pays for no server GPU.",
+          "Four image-upscaling filters (BSD-3 licence): two Fast ones (2.4 MB and 1.2 MB) ship with the page, two High quality ones (33.4 MB and 8.9 MB) download only when chosen.",
+          "No framework, no build step: HTML, CSS and 14 ES modules served as they are."
+        ]
+      },
+      "stats": [
+        {"v": "27/27", "vi": "quy tắc dự án được kiểm tự động", "en": "project rules checked automatically"},
+        {"v": "18/18", "vi": "lỗi cài cố ý đều bị bộ kiểm tra bắt được", "en": "deliberately planted mistakes all caught by the checker"},
+        {"v": "22/22", "vi": "kiểm tra trong Chrome thật: đầu vào xấu, file hỏng, ảnh quá lớn, mất mạng", "en": "checks in a real Chrome: bad input, broken files, oversized images, network down"},
+        {"v": {"vi": "2,7 GB → 640 MB", "en": "2.7 GB → 640 MB"}, "vi": "bộ nhớ GPU cao nhất cho ảnh 500×330 ở mức Chất lượng cao sau khi đổi cách chia mảnh (điện thoại khoảng 400 MB)", "en": "peak GPU memory for a 500×330 image in High quality after the tiling change (phones about 400 MB)"},
+        {"v": "~1e-5", "vi": "độ lệch so với kết quả của bản tham chiếu gốc", "en": "difference from the original reference output"},
+        {"v": "3.422", "vi": "dòng code (JavaScript, Python, CSS, HTML)", "en": "lines of code (JavaScript, Python, CSS, HTML)"}
+      ],
+      "decisions": [
+        {
+          "what": {"vi": "Xử lý ngay trong trình duyệt", "en": "Process in the browser"},
+          "why": {"vi": "Không trả tiền GPU máy chủ, không giữ ảnh của ai, không giới hạn lượt", "en": "No server GPU to pay for, no one else's images to hold, no usage cap"},
+          "alt": {"vi": "Dịch vụ trả phí theo từng ảnh, ảnh bị gửi đi", "en": "A paid per-image service, with images sent away"}
+        },
+        {
+          "what": {"vi": "Dựng lại các mạng xử lý ảnh bằng thư viện tính toán chạy trong trình duyệt, từ trọng số fp16", "en": "Rebuild the image networks in a browser compute library from fp16 weights"},
+          "why": {"vi": "File nhỏ, không cần công cụ ngoài để chuyển đổi, kiểm soát được bộ nhớ từng mảnh", "en": "Small files, no external tool needed to convert, control of memory per tile"},
+          "alt": {"vi": "Nạp file mô hình dựng sẵn (nặng hơn, không kiểm soát được bộ nhớ)", "en": "Loading ready-made model files (heavier, no memory control)"}
+        },
+        {
+          "what": {"vi": "Mọi mảnh ảnh đọc qua cùng một cửa sổ cùng kích thước", "en": "Every tile read through one same-size window"},
+          "why": {"vi": "Bộ nhớ GPU được giữ theo kích thước; chỉ một kích thước thì dùng lại được", "en": "GPU memory is kept per size; one size means reuse"},
+          "alt": {"vi": "Mỗi kích thước mảnh một cửa sổ (2,7 GB, tab trên điện thoại bị sập)", "en": "A window per tile size (2.7 GB, tabs crashed on phones)"}
+        },
+        {
+          "what": {"vi": "Bộ lọc lớn đặt ở nơi lưu trữ riêng", "en": "Large filters hosted separately"},
+          "why": {"vi": "Nơi lưu trang không nhận file quá 25 MiB; repo git nhẹ", "en": "The page host allows 25 MiB per file; the git repo stays light"},
+          "alt": {"vi": "Để chung với trang", "en": "Keeping them with the page"}
+        },
+        {
+          "what": {"vi": "Không framework, không bước build", "en": "No framework, no build step"},
+          "why": {"vi": "Trang chỉ một màn hình; ít bộ phận chuyển động; phát hành là một lần push", "en": "A one-screen page; fewer moving parts; releasing is a git push"},
+          "alt": {"vi": "React, bundler, npm", "en": "React, a bundler, npm"}
+        }
+      ],
+      "verify": {
+        "vi": [
+          "Kết quả được so với bản tham chiếu gốc, lệch khoảng 1e-5.",
+          "Trang được kiểm trong Chrome thật với đầu vào xấu, file hỏng, ảnh quá lớn và mất mạng.",
+          "Bộ kiểm tra quy tắc được chứng minh bằng 18 lỗi cài cố ý, tất cả đều bị bắt."
+        ],
+        "en": [
+          "Output is compared with the original reference, about 1e-5 apart.",
+          "The page is checked in a real Chrome with bad input, broken files, oversized images and the network down.",
+          "The rule checker is proven by 18 deliberately planted mistakes, all caught."
+        ]
+      }
+    },
+    {
+      "slug": "lims",
+      "name": "Exomaly LIMS",
+      "url": "https://lims.exomaly.com",
+      "accent": "#10B981",
+      "asof": "2026-10-25",
+      "tagline": {
+        "vi": "Quản lý phòng thử nghiệm theo ISO/IEC 17025: từ nhận mẫu đến phiếu kết quả, kèm dự đoán thời gian trả kết quả và phát hiện kết quả bất thường. Đồ án khoá luận, chỉ dùng dữ liệu giả.",
+        "en": "Laboratory management to ISO/IEC 17025, from sample receipt to the test report, with turnaround-time prediction and anomaly detection. A thesis project, synthetic data only."
+      },
+      "summary": {
+        "vi": [
+          "Luồng nghiệp vụ trọn vẹn: lệnh công việc, nhận mẫu, chuyển bộ phận, nhập kết quả, soát xét, phê duyệt, phát hành phiếu kết quả (hai ngôn ngữ, in ra PDF). Phiếu đã phát hành chỉ được thay bằng bản sửa đổi.",
+          "Kiểm soát chất lượng nội bộ (mẫu chuẩn, mẫu trắng, mẫu lặp, biểu đồ Nordtest), thiết bị và hiệu chuẩn, sổ chất lượng (sự không phù hợp, khiếu nại, hành động khắc phục), kiểm soát tài liệu, năng lực nhân sự, báo giá theo từng phép thử và tệp đính kèm lưu theo mã băm.",
+          "Mọi thao tác sửa hay xoá dữ liệu danh mục, cấu hình và nhân sự đều phải ghi lý do; nhập bù phải nói vì sao trễ. Nhật ký kiểm toán có thể xem và xuất.",
+          "Hai mô-đun phân tích dữ liệu: dự đoán thời gian trả kết quả và phát hiện kết quả bất thường; số liệu đo trên dữ liệu giả.",
+          "Bản demo công khai dùng cơ sở dữ liệu riêng, nạp lại dữ liệu giả mỗi đêm."
+        ],
+        "en": [
+          "A working business flow: work order, sample receipt, transfer to a section, result entry, review, approval, test report issued (two languages, printable to PDF). An issued report is only replaced by an amendment.",
+          "Internal quality control (reference materials, blanks, duplicates, Nordtest charts), equipment and calibration, a quality register (nonconformities, complaints, corrective actions), document control, staff competence, per-test quotations, and file attachments stored by checksum.",
+          "Every edit or delete of catalogue, configuration or staff data must carry a reason; a late entry must state why. The audit trail can be viewed and exported.",
+          "Two data-analysis modules: turnaround-time prediction and anomaly detection in results; figures are measured on synthetic data.",
+          "The public demo uses its own database, reloaded with synthetic data every night."
+        ]
+      },
+      "stats": [
+        {"v": {"vi": "2.282/2.282", "en": "2,282/2,282"}, "vi": "lỗi cài cố ý bằng 36 script đều bị test bắt, không ca nào bỏ qua (lần chạy đầy đủ ngày 17/10/2026)", "en": "deliberate bugs planted by 36 scripts all caught by the tests, none skipped (full run of 2026-10-17)"},
+        {"v": {"vi": "34 giờ", "en": "34 h"}, "vi": "sai số tuyệt đối trung bình của dự đoán thời gian trả kết quả (dữ liệu giả), so với 46 giờ của luật theo hạn", "en": "mean absolute error of the turnaround prediction (synthetic data), against 46 h for the due-date rule"},
+        {"v": "96 %", "vi": "đợt trôi QC cài sẵn được phát hiện bằng EWMA, so với 78 % của luật Nordtest, cùng tỉ lệ báo động giả", "en": "planted QC drift episodes detected with EWMA, against 78 % for the Nordtest rules, at the same false-alarm rate"},
+        {"v": "13", "vi": "quy tắc dự án, mỗi quy tắc có kiểm tự động", "en": "project rules, each with an automatic check"},
+        {"v": {"vi": "> 211.000", "en": "> 211,000"}, "vi": "dòng JavaScript, Python, SQL, CSS, HTML", "en": "lines of JavaScript, Python, SQL, CSS, HTML"}
+      ],
+      "decisions": [
+        {
+          "what": {"vi": "Mỗi phòng thí nghiệm một bản triển khai và một cơ sở dữ liệu riêng", "en": "One deployment per laboratory, each with its own database"},
+          "why": {"vi": "Dữ liệu của khách này không thể lộ sang khách khác; dễ giải thích với phòng thí nghiệm khó tính", "en": "One customer's data cannot leak to another; easy to explain to demanding labs"},
+          "alt": {"vi": "Một cơ sở dữ liệu chung có cột khách hàng: rẻ hơn nhưng một lỗi code có thể làm lộ dữ liệu", "en": "One shared database with a customer column: cheaper, but one code bug could leak data"}
+        },
+        {
+          "what": {"vi": "Hạ tầng đám mây miễn phí, không có máy chủ nào phải giữ chạy", "en": "Free cloud infrastructure, no server to keep running"},
+          "why": {"vi": "Miễn phí ở quy mô khoá luận, không phải tự vá lỗi", "en": "Free at thesis scale, no self-patching"},
+          "alt": {"vi": "Odoo + PostgreSQL trong Docker trên VPS (tốn tiền hằng tháng); máy nhà + tunnel (phải bật 24/7)", "en": "Odoo + PostgreSQL in Docker on a VPS (monthly cost); home machine + tunnel (must stay on 24/7)"}
+        },
+        {
+          "what": {"vi": "Mẫu có hai máy trạng thái riêng: tiến độ phép thử, và quyền giữ mẫu (trong phòng, lưu, chờ huỷ, đã huỷ, trả lại)", "en": "A sample has two separate state machines: test progress, and physical custody (in lab, retained, pending disposal, disposed, returned)"},
+          "why": {"vi": "Trả hoặc huỷ mẫu không giống với báo cáo kết quả; trộn lẫn làm bảng chuyển trạng thái khó kiểm và có thể huỷ mẫu còn phép thử chưa lên phiếu", "en": "Returning or disposing of a sample is not the same as reporting its results; mixing them makes the transition table hard to check and risks disposing of a sample that still has tests not on a report"},
+          "alt": {"vi": "Thêm vài giá trị vào một trạng thái mẫu duy nhất", "en": "Adding a few values to one single sample status"}
+        },
+        {
+          "what": {"vi": "Địa chỉ máy thực hiện mỗi thay đổi nằm ở bảng riêng, tự xoá sau thời hạn lưu (mặc định 12 tháng)", "en": "The address of the machine behind each change goes in a separate table that deletes itself after a retention period (12 months by default)"},
+          "why": {"vi": "Nhật ký kiểm toán là bất biến nên không được chứa dữ liệu phải xoá được; địa chỉ IP là dữ liệu cá nhân", "en": "The audit trail is immutable so it cannot hold data that must be deletable; an IP address is personal data"},
+          "alt": {"vi": "Ghi IP vào chính dòng nhật ký: không xoá được, xung đột với quy định bảo vệ dữ liệu", "en": "Writing the IP into the audit row itself: cannot be deleted, conflicts with data protection rules"}
+        },
+        {
+          "what": {"vi": "Cờ bất thường giải thích được (giới hạn quy định, z-score theo trung vị)", "en": "Explainable anomaly flags (regulatory limits, median-based z-score)"},
+          "why": {"vi": "Người soát xét phải hiểu vì sao một kết quả bị đánh dấu", "en": "A reviewer must understand why a result is flagged"},
+          "alt": {"vi": "Isolation Forest: điểm cao hơn trên nhãn cài sẵn nhưng chưa có nhãn thật để đặt ngưỡng", "en": "Isolation Forest: scores higher on planted labels but there are no real labels to set a threshold yet"}
+        },
+        {
+          "what": {"vi": "Phát hiện trôi biểu đồ QC bằng EWMA, chọn theo kết quả đo", "en": "QC drift detection by EWMA, chosen by measurement"},
+          "why": {"vi": "EWMA bắt được độ trôi nhỏ kéo dài khi từng giá trị còn trong giới hạn, ở cùng tỉ lệ báo động giả", "en": "EWMA catches small lasting drift while each value is still within its limits, at the same false-alarm rate"},
+          "alt": {"vi": "Chặn soát xét khi QC hỏng: để sau khi đo trên dữ liệu thật, vì nó đổi một luật lõi", "en": "Blocking review when QC fails: left until measurements on real data, because it changes a core rule"}
+        },
+        {
+          "what": {"vi": "Mô hình dự đoán huấn luyện trên máy riêng, máy chủ chỉ tính từ tệp JSON", "en": "Prediction models trained on a workstation, the server only computes from JSON"},
+          "why": {"vi": "Máy chủ không chạy được thư viện huấn luyện; duyệt cây quyết định bằng JavaScript thì ngắn và kiểm tra được sự tương đương", "en": "The server cannot run the training library; walking decision trees in JavaScript is short and can be checked for parity"},
+          "alt": {"vi": "Python trên máy chủ hoặc container: không ổn định hoặc trả phí", "en": "Python on the server or containers: unstable or paid"}
+        }
+      ],
+      "verify": {
+        "vi": [
+          "Mỗi quy tắc dự án có kiểm tự động. Để chắc các kiểm tra đó bắt được lỗi, 36 script cài 2.282 lỗi cố ý vào code và tất cả đều bị test bắt (chạy ngày 17/10/2026).",
+          "Các bước kiểm trong Chrome thật đi hết một vòng đời của mẫu và các màn hình chất lượng, tài liệu, năng lực, tệp đính kèm, thiết bị, báo giá.",
+          "Số liệu dự đoán và phát hiện trôi QC đo trên dữ liệu giả: chúng cho thấy phương pháp tìm được các hiệu ứng đã cài, không phải hiệu năng ở một phòng thí nghiệm thật."
+        ],
+        "en": [
+          "Every project rule has an automatic check. To make sure those checks catch real faults, 36 scripts planted 2,282 deliberate bugs in the code and the tests caught all of them (run of 2026-10-17).",
+          "Steps checked in a real Chrome go through a full sample life cycle and the quality, document, competence, attachment, equipment and quotation screens.",
+          "The prediction and QC-drift figures are measured on synthetic data: they show the method finds the planted effects, not how it performs in a real laboratory."
+        ]
+      }
+    },
+    {
+      "slug": "sarangson",
+      "name": "Exomaly SarangSon",
+      "url": "https://sarangson.exomaly.com",
+      "accent": "#C2E8F5",
+      "asof": "2026-10-27",
+      "tagline": {
+        "vi": "Quà tặng riêng cho Thanh Son. Dịch chữ Hàn trong ảnh sang tiếng Việt, bản dịch hiện đè lên đúng chỗ chữ gốc.",
+        "en": "A private gift for Thanh Son. Translates Korean text in a photo into Vietnamese, with the translation shown over the original words."
+      },
+      "summary": {
+        "vi": [
+          "Đọc chữ Hàn trong ảnh, dịch từng dòng sang tiếng Việt và vẽ bản dịch đè lên đúng vị trí trên ảnh, kèm danh sách từ vựng (từ, dạng từ điển, phiên âm, nghĩa) và nút đọc to để nghe phát âm.",
+          "Dữ liệu đi đâu: ảnh đi từ trình duyệt tới máy chủ của dự án rồi tới một dịch vụ dịch tự động. Không có cơ sở dữ liệu, không lưu ảnh hay văn bản. Chế độ chữ in đọc ảnh ngay trên máy và chỉ gửi phần chữ đi dịch.",
+          "Dùng các gói miễn phí, người dùng không phải trả tiền. HTML, CSS, JavaScript thuần, không bước build."
+        ],
+        "en": [
+          "Reads Korean text in a photo, translates each line into Vietnamese and draws the translation in place over the image, with a vocabulary list (word, dictionary form, romanization, meaning) and a read-aloud button for pronunciation.",
+          "Where data goes: the image goes from the browser to the project's server, then to an automatic translation service. No database, no images or text stored. Printed mode reads the image on the device and only sends the text for translation.",
+          "Uses free tiers, so users pay nothing. Plain HTML, CSS and JavaScript, no build step."
+        ]
+      },
+      "stats": [
+        {"v": "206/206", "vi": "kiểm tra giao diện (27/10/2026)", "en": "UI checks (2026-10-27)"},
+        {"v": "44/44", "vi": "test máy chủ với dịch vụ giả lập: giới hạn đầu vào, hết thời gian, mất mạng, phương án dự phòng", "en": "server tests with a simulated service: input limits, timeout, network down, fallback"},
+        {"v": "15/15", "vi": "lỗi cài cố ý đều bị bộ kiểm quy tắc bắt được", "en": "deliberate faults all caught by the rule checker"},
+        {"v": "0 → 18–35", "vi": "số dòng chữ in đọc được trên ảnh mẫu khi tách một lần gọi thành hai (đo 3 lần)", "en": "printed lines read on the sample image when one call was split into two (measured 3 times)"},
+        {"v": "8.284", "vi": "dòng code (JavaScript, Python, CSS, HTML, PowerShell)", "en": "lines of code (JavaScript, Python, CSS, HTML, PowerShell)"}
+      ],
+      "decisions": [
+        {
+          "what": {"vi": "Trang và API cùng nằm trên một máy chủ", "en": "Page and API on one server"},
+          "why": {"vi": "Khoá của dịch vụ dịch không bao giờ tới trình duyệt; một địa chỉ nên không cần CORS", "en": "The service key never reaches the browser; one address, so no CORS"},
+          "alt": {"vi": "Gọi dịch vụ thẳng từ trình duyệt (lộ khoá); trang một nơi, API một nơi (cần CORS, hai lần phát hành)", "en": "Calling the service straight from the browser (leaks the key); page in one place and API in another (needs CORS, two deployments)"}
+        },
+        {
+          "what": {"vi": "Mỗi ảnh gọi hai lần: dòng chữ kèm vị trí, rồi từ vựng", "en": "Two calls per image: lines with positions, then vocabulary"},
+          "why": {"vi": "Gộp thành một lần thì dịch vụ bỏ sót toàn bộ chữ in (đã đo)", "en": "Combined into one call, the service missed all printed text (measured)"},
+          "alt": {"vi": "Một lần gọi gộp: rẻ hơn nhưng sót chữ", "en": "One combined call: cheaper but misses text"}
+        },
+        {
+          "what": {"vi": "Chữ in đọc bằng Tesseract.js ngay trên máy", "en": "Printed text read by Tesseract.js on the device"},
+          "why": {"vi": "Đọc đúng chữ in sạch, không tốn hạn mức, ảnh không rời máy", "en": "Reads clean print correctly, costs no quota, the image never leaves the device"},
+          "alt": {"vi": "Dùng Tesseract cho chữ viết tay (đọc rất kém)", "en": "Using Tesseract for handwriting (reads it very poorly)"}
+        },
+        {
+          "what": {"vi": "Bỏ tính năng dịch trực tiếp bằng camera (27/10/2026)", "en": "Dropped the live camera translation (2026-10-27)"},
+          "why": {"vi": "Không ổn định trên điện thoại thật; mỗi lần dịch mất vài giây mà gói miễn phí giới hạn số lần gọi mỗi phút", "en": "Unstable on a real phone; each translation takes a few seconds and the free tier limits calls per minute"},
+          "alt": {"vi": "Giữ camera và chỉnh ngưỡng chuyển động, hoặc dịch từng khung hình khi lia máy", "en": "Keeping the camera and tuning the motion thresholds, or translating every frame while panning"}
+        }
+      ],
+      "verify": {
+        "vi": [
+          "Máy chủ được kiểm với dịch vụ giả lập: giới hạn đầu vào, hết thời gian, mất mạng và phương án dự phòng.",
+          "Giao diện được kiểm 206 bước; trang đã phát hành được kiểm lại bằng các kiểm tra API thật (25/10/2026).",
+          "Quyết định tách hai lần gọi dựa trên số đo thật, không phải phỏng đoán."
+        ],
+        "en": [
+          "The server is tested with a simulated service: input limits, timeout, network down and fallback.",
+          "The interface is checked in 206 steps; the released site was checked again with real API checks (2026-10-25).",
+          "The decision to split into two calls rests on a measurement, not a guess."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exomaly SarangSon · Cách làm</title>
+<meta name="description" content="Quà tặng riêng cho Thanh Son. Dịch chữ Hàn trong ảnh sang tiếng Việt, bản dịch hiện đè lên đúng chỗ chữ gốc.">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body style="--accent: #C2E8F5">
+<header class="top">
+  <a class="back" href="index.html"><span lang="vi">← Tất cả sản phẩm</span><span lang="en">← All products</span></a>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-set-lang="vi">VI</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
+</header>
+<main>
+  <p class="eyebrow"><span lang="vi">Cách sản phẩm này được làm</span><span lang="en">How this product is built</span></p>
+  <h1>Exomaly SarangSon</h1>
+  <p class="tagline"><span lang="vi">Quà tặng riêng cho Thanh Son. Dịch chữ Hàn trong ảnh sang tiếng Việt, bản dịch hiện đè lên đúng chỗ chữ gốc.</span><span lang="en">A private gift for Thanh Son. Translates Korean text in a photo into Vietnamese, with the translation shown over the original words.</span></p>
+  <p><a class="cta" href="https://sarangson.exomaly.com"><span lang="vi">Mở sản phẩm</span><span lang="en">Open the product</span> →</a></p>
+
+  <section>
+    <h2><span class="n">1</span><span lang="vi">Tóm tắt</span><span lang="en">Summary</span></h2>
+    <ul lang="vi"><li>Đọc chữ Hàn trong ảnh, dịch từng dòng sang tiếng Việt và vẽ bản dịch đè lên đúng vị trí trên ảnh, kèm danh sách từ vựng (từ, dạng từ điển, phiên âm, nghĩa) và nút đọc to để nghe phát âm.</li><li>Dữ liệu đi đâu: ảnh đi từ trình duyệt tới máy chủ của dự án rồi tới một dịch vụ dịch tự động. Không có cơ sở dữ liệu, không lưu ảnh hay văn bản. Chế độ chữ in đọc ảnh ngay trên máy và chỉ gửi phần chữ đi dịch.</li><li>Dùng các gói miễn phí, người dùng không phải trả tiền. HTML, CSS, JavaScript thuần, không bước build.</li></ul><ul lang="en"><li>Reads Korean text in a photo, translates each line into Vietnamese and draws the translation in place over the image, with a vocabulary list (word, dictionary form, romanization, meaning) and a read-aloud button for pronunciation.</li><li>Where data goes: the image goes from the browser to the project&#x27;s server, then to an automatic translation service. No database, no images or text stored. Printed mode reads the image on the device and only sends the text for translation.</li><li>Uses free tiers, so users pay nothing. Plain HTML, CSS and JavaScript, no build step.</li></ul>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span lang="vi">Số liệu</span><span lang="en">By the numbers</span></h2>
+    <div class="stats"><div class="stat"><div class="v"><span lang="vi">206/206</span><span lang="en">206/206</span></div><div class="k"><span lang="vi">kiểm tra giao diện (27/10/2026)</span><span lang="en">UI checks (2026-10-27)</span></div></div><div class="stat"><div class="v"><span lang="vi">44/44</span><span lang="en">44/44</span></div><div class="k"><span lang="vi">test máy chủ với dịch vụ giả lập: giới hạn đầu vào, hết thời gian, mất mạng, phương án dự phòng</span><span lang="en">server tests with a simulated service: input limits, timeout, network down, fallback</span></div></div><div class="stat"><div class="v"><span lang="vi">15/15</span><span lang="en">15/15</span></div><div class="k"><span lang="vi">lỗi cài cố ý đều bị bộ kiểm quy tắc bắt được</span><span lang="en">deliberate faults all caught by the rule checker</span></div></div><div class="stat"><div class="v"><span lang="vi">0 → 18–35</span><span lang="en">0 → 18–35</span></div><div class="k"><span lang="vi">số dòng chữ in đọc được trên ảnh mẫu khi tách một lần gọi thành hai (đo 3 lần)</span><span lang="en">printed lines read on the sample image when one call was split into two (measured 3 times)</span></div></div><div class="stat"><div class="v"><span lang="vi">8.284</span><span lang="en">8.284</span></div><div class="k"><span lang="vi">dòng code (JavaScript, Python, CSS, HTML, PowerShell)</span><span lang="en">lines of code (JavaScript, Python, CSS, HTML, PowerShell)</span></div></div></div>
+    <p class="asof"><span lang="vi">Số liệu lấy từ các lần chạy thật, tính đến 2026-10-27.</span><span lang="en">Figures come from real runs, as of 2026-10-27.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span><span lang="vi">Quyết định thiết kế</span><span lang="en">Design decisions</span></h2>
+    <article class="dec"><h3><span lang="vi">Trang và API cùng nằm trên một máy chủ</span><span lang="en">Page and API on one server</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Khoá của dịch vụ dịch không bao giờ tới trình duyệt; một địa chỉ nên không cần CORS</span><span lang="en">The service key never reaches the browser; one address, so no CORS</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Gọi dịch vụ thẳng từ trình duyệt (lộ khoá); trang một nơi, API một nơi (cần CORS, hai lần phát hành)</span><span lang="en">Calling the service straight from the browser (leaks the key); page in one place and API in another (needs CORS, two deployments)</span></dd></dl></article><article class="dec"><h3><span lang="vi">Mỗi ảnh gọi hai lần: dòng chữ kèm vị trí, rồi từ vựng</span><span lang="en">Two calls per image: lines with positions, then vocabulary</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Gộp thành một lần thì dịch vụ bỏ sót toàn bộ chữ in (đã đo)</span><span lang="en">Combined into one call, the service missed all printed text (measured)</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Một lần gọi gộp: rẻ hơn nhưng sót chữ</span><span lang="en">One combined call: cheaper but misses text</span></dd></dl></article><article class="dec"><h3><span lang="vi">Chữ in đọc bằng Tesseract.js ngay trên máy</span><span lang="en">Printed text read by Tesseract.js on the device</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Đọc đúng chữ in sạch, không tốn hạn mức, ảnh không rời máy</span><span lang="en">Reads clean print correctly, costs no quota, the image never leaves the device</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Dùng Tesseract cho chữ viết tay (đọc rất kém)</span><span lang="en">Using Tesseract for handwriting (reads it very poorly)</span></dd></dl></article><article class="dec"><h3><span lang="vi">Bỏ tính năng dịch trực tiếp bằng camera (27/10/2026)</span><span lang="en">Dropped the live camera translation (2026-10-27)</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Không ổn định trên điện thoại thật; mỗi lần dịch mất vài giây mà gói miễn phí giới hạn số lần gọi mỗi phút</span><span lang="en">Unstable on a real phone; each translation takes a few seconds and the free tier limits calls per minute</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Giữ camera và chỉnh ngưỡng chuyển động, hoặc dịch từng khung hình khi lia máy</span><span lang="en">Keeping the camera and tuning the motion thresholds, or translating every frame while panning</span></dd></dl></article>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span><span lang="vi">Cách kiểm chứng</span><span lang="en">How it is verified</span></h2>
+    <ul lang="vi"><li>Máy chủ được kiểm với dịch vụ giả lập: giới hạn đầu vào, hết thời gian, mất mạng và phương án dự phòng.</li><li>Giao diện được kiểm 206 bước; trang đã phát hành được kiểm lại bằng các kiểm tra API thật (25/10/2026).</li><li>Quyết định tách hai lần gọi dựa trên số đo thật, không phải phỏng đoán.</li></ul><ul lang="en"><li>The server is tested with a simulated service: input limits, timeout, network down and fallback.</li><li>The interface is checked in 206 steps; the released site was checked again with real API checks (2026-10-25).</li><li>The decision to split into two calls rests on a measurement, not a guess.</li></ul>
+  </section>
+</main>
+<footer>
+  <p><span lang="vi">Mã nguồn các sản phẩm nằm ở kho riêng tư.</span><span lang="en">Source code is kept in private repositories.</span></p>
+  <p><span lang="vi">Liên hệ</span><span lang="en">Contact</span>: <a href="https://www.facebook.com/Exomaly">Facebook</a> · <a href="https://zalo.me/0334934592">Zalo</a> · tdk.exomaly@gmail.com</p>
+  <p class="brand">Truong Dang Khoa — Exomaly Code</p>
+</footer>
+</body>
+</html>

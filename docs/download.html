@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exomaly Download · Cách làm</title>
+<meta name="description" content="Tải video YouTube, Facebook, Instagram, TikTok đến 4K hoặc tách âm thanh MP3 / M4A, bằng app trên máy tính.">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body style="--accent: #8B5CF6">
+<header class="top">
+  <a class="back" href="index.html"><span lang="vi">← Tất cả sản phẩm</span><span lang="en">← All products</span></a>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-set-lang="vi">VI</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
+</header>
+<main>
+  <p class="eyebrow"><span lang="vi">Cách sản phẩm này được làm</span><span lang="en">How this product is built</span></p>
+  <h1>Exomaly Download</h1>
+  <p class="tagline"><span lang="vi">Tải video YouTube, Facebook, Instagram, TikTok đến 4K hoặc tách âm thanh MP3 / M4A, bằng app trên máy tính.</span><span lang="en">Download YouTube, Facebook, Instagram and TikTok videos up to 4K, or extract MP3 / M4A audio, with an app on your PC.</span></p>
+  <p><a class="cta" href="https://download.exomaly.com"><span lang="vi">Mở sản phẩm</span><span lang="en">Open the product</span> →</a></p>
+
+  <section>
+    <h2><span class="n">1</span><span lang="vi">Tóm tắt</span><span lang="en">Summary</span></h2>
+    <ul lang="vi"><li>Là app trên máy tính, không phải trang web: YouTube chặn địa chỉ IP của máy chủ và các nền tảng chặn đọc chéo trang trong trình duyệt. App chạy ngay trên máy người dùng nên tránh được cả hai.</li><li>Không tự viết bộ tách video: dùng yt-dlp và FFmpeg, hai dự án mở đang được bảo trì liên tục. yt-dlp tự cập nhật mỗi 6 giờ.</li><li>Bản cài đặt nằm ở GitHub Releases, trang web chỉ làm nhiệm vụ giới thiệu và bán key.</li></ul><ul lang="en"><li>An app on the PC, not a website: YouTube blocks server IP addresses and the platforms block cross-site reads in the browser. An app on the user&#x27;s machine avoids both.</li><li>No home-made extractor: it uses yt-dlp and FFmpeg, two actively maintained open projects. yt-dlp updates itself every 6 hours.</li><li>The installer lives on GitHub Releases; the website only presents the app and sells keys.</li></ul>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span lang="vi">Số liệu</span><span lang="en">By the numbers</span></h2>
+    <div class="stats"><div class="stat"><div class="v"><span lang="vi">26</span><span lang="en">26</span></div><div class="k"><span lang="vi">file test: Python, Chrome điều khiển qua CDP, Node</span><span lang="en">test files: Python, Chrome driven over CDP, Node</span></div></div><div class="stat"><div class="v"><span lang="vi">38/38</span><span lang="en">38/38</span></div><div class="k"><span lang="vi">kiểm tra link: chỉ nhận tên miền của 4 nền tảng</span><span lang="en">link checks: only the 4 platforms&#x27; own domains are accepted</span></div></div><div class="stat"><div class="v"><span lang="vi">23/23</span><span lang="en">23/23</span></div><div class="k"><span lang="vi">kiểm tra tự cập nhật: chỉ nhận bản phát hành của chính app, kiểm kích thước và mã băm</span><span lang="en">self-update checks: only the app&#x27;s own releases, size and checksum verified</span></div></div><div class="stat"><div class="v"><span lang="vi">12/12</span><span lang="en">12/12</span></div><div class="k"><span lang="vi">kiểm tra trên trang thật sau lần phát hành gần nhất</span><span lang="en">checks on the live site after the latest release</span></div></div><div class="stat"><div class="v"><span lang="vi">11.818</span><span lang="en">11.818</span></div><div class="k"><span lang="vi">dòng code (Python, JavaScript, HTML, CSS, SQL, PowerShell)</span><span lang="en">lines of code (Python, JavaScript, HTML, CSS, SQL, PowerShell)</span></div></div></div>
+    <p class="asof"><span lang="vi">Số liệu lấy từ các lần chạy thật, tính đến 2026-10-11.</span><span lang="en">Figures come from real runs, as of 2026-10-11.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span><span lang="vi">Quyết định thiết kế</span><span lang="en">Design decisions</span></h2>
+    <article class="dec"><h3><span lang="vi">App Windows chạy một máy chủ nhỏ ngay trên máy người dùng</span><span lang="en">A Windows app running a small server on the user&#x27;s PC</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">YouTube chặn IP máy chủ; các nền tảng chặn đọc chéo trang</span><span lang="en">YouTube blocks server IPs; platforms block cross-site reads</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Trang web tải video qua máy chủ</span><span lang="en">A website that downloads through a server</span></dd></dl></article><article class="dec"><h3><span lang="vi">yt-dlp và FFmpeg</span><span lang="en">yt-dlp and FFmpeg</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Thư viện mở, theo kịp thay đổi của các nền tảng</span><span lang="en">Open libraries that follow the platforms&#x27; changes</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Tự viết bộ tách video</span><span lang="en">A home-made extractor</span></dd></dl></article><article class="dec"><h3><span lang="vi">Bản cài đặt đặt ở GitHub Releases</span><span lang="en">Installer on GitHub Releases</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Nơi lưu trang web không nhận file quá 25 MiB</span><span lang="en">The website host refuses files over 25 MiB</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Đặt chung với trang web</span><span lang="en">Hosting it with the website</span></dd></dl></article><article class="dec"><h3><span lang="vi">Giới hạn ở 4K</span><span lang="en">A 4K cap</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Bộ mã hoá H.264 của NVIDIA dừng ở chiều ngang 4096 px</span><span lang="en">NVIDIA&#x27;s H.264 encoder stops at 4096 px wide</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Mời tải 8K</span><span lang="en">Offering 8K</span></dd></dl></article>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span><span lang="vi">Cách kiểm chứng</span><span lang="en">How it is verified</span></h2>
+    <ul lang="vi"><li>26 file test chạy bằng Python, Chrome điều khiển qua CDP và Node.</li><li>Bộ kiểm tra link và bộ kiểm tra tự cập nhật có đủ ca đúng lẫn ca xấu (link lạ, file sai kích thước, mã băm không khớp).</li><li>Sau mỗi lần phát hành, trang thật được kiểm lại.</li></ul><ul lang="en"><li>26 test files run with Python, Chrome driven over CDP, and Node.</li><li>The link checks and self-update checks cover both good and bad cases (foreign links, wrong file size, checksum mismatch).</li><li>After every release, the live site is checked again.</li></ul>
+  </section>
+</main>
+<footer>
+  <p><span lang="vi">Mã nguồn các sản phẩm nằm ở kho riêng tư.</span><span lang="en">Source code is kept in private repositories.</span></p>
+  <p><span lang="vi">Liên hệ</span><span lang="en">Contact</span>: <a href="https://www.facebook.com/Exomaly">Facebook</a> · <a href="https://zalo.me/0334934592">Zalo</a> · tdk.exomaly@gmail.com</p>
+  <p class="brand">Truong Dang Khoa — Exomaly Code</p>
+</footer>
+</body>
+</html>

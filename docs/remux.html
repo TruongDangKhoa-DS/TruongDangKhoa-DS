@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exomaly Remux · Cách làm</title>
+<meta name="description" content="Sửa container của file MP4 trước khi đăng lên TikTok, hình và tiếng giữ nguyên từng byte.">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body style="--accent: #FF3B4E">
+<header class="top">
+  <a class="back" href="index.html"><span lang="vi">← Tất cả sản phẩm</span><span lang="en">← All products</span></a>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-set-lang="vi">VI</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
+</header>
+<main>
+  <p class="eyebrow"><span lang="vi">Cách sản phẩm này được làm</span><span lang="en">How this product is built</span></p>
+  <h1>Exomaly Remux</h1>
+  <p class="tagline"><span lang="vi">Sửa container của file MP4 trước khi đăng lên TikTok, hình và tiếng giữ nguyên từng byte.</span><span lang="en">Fixes the container of an MP4 file before posting to TikTok, picture and sound unchanged byte for byte.</span></p>
+  <p><a class="cta" href="https://upload.exomaly.com"><span lang="vi">Mở sản phẩm</span><span lang="en">Open the product</span> →</a></p>
+
+  <section>
+    <h2><span class="n">1</span><span lang="vi">Tóm tắt</span><span lang="en">Summary</span></h2>
+    <ul lang="vi"><li>Không mã hoá lại: dữ liệu hình và tiếng của file ra bằng đúng file vào, từng byte, nên chất lượng không bao giờ đổi.</li><li>Hình và tiếng không rời máy: chỉ phần chỉ mục của file (khối moov) được gửi qua HTTPS tới máy chủ, xử lý trong bộ nhớ và không lưu.</li><li>Không framework, không bước build. Phông chữ tự lưu, trang không gọi Google Fonts.</li></ul><ul lang="en"><li>No re-encoding: the picture and sound data of the output equal the input byte for byte, so quality never changes.</li><li>Picture and sound never leave the device: only the file&#x27;s index (the moov box) goes over HTTPS to the server, is processed in memory and is not stored.</li><li>No framework, no build step. Fonts are self-hosted, the page makes no call to Google Fonts.</li></ul>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span lang="vi">Số liệu</span><span lang="en">By the numbers</span></h2>
+    <div class="stats"><div class="stat"><div class="v"><span lang="vi">190/190</span><span lang="en">190/190</span></div><div class="k"><span lang="vi">test Node trong 29 nhóm: xử lý file, máy chủ, cửa hàng, quy tắc</span><span lang="en">Node tests in 29 groups: file processing, server, shop, rules</span></div></div><div class="stat"><div class="v"><span lang="vi">22/22</span><span lang="en">22/22</span></div><div class="k"><span lang="vi">test Python cho công cụ dòng lệnh mp4lab.py</span><span lang="en">Python tests for the mp4lab.py command-line tool</span></div></div><div class="stat"><div class="v"><span lang="vi">34/34</span><span lang="en">34/34</span></div><div class="k"><span lang="vi">kiểm tra luồng trang trong Chrome: chỉ phần chỉ mục được gửi, kết quả khớp từng byte</span><span lang="en">page-flow checks in Chrome: only the index is sent, results match byte for byte</span></div></div><div class="stat"><div class="v"><span lang="vi">25/25</span><span lang="en">25/25</span></div><div class="k"><span lang="vi">kiểm tra API trong môi trường chạy thật cục bộ với cơ sở dữ liệu cục bộ</span><span lang="en">API checks inside a local runtime with a local database</span></div></div><div class="stat"><div class="v"><span lang="vi">17 / 90 ms</span><span lang="en">17 / 90 ms</span></div><div class="k"><span lang="vi">thời gian CPU máy chủ cho video 4K 60 fps / video Full HD 60 fps dài 10 phút</span><span lang="en">server CPU for a 4K 60 fps test video / a 10-minute Full HD 60 fps video</span></div></div><div class="stat"><div class="v"><span lang="vi">7.888</span><span lang="en">7.888</span></div><div class="k"><span lang="vi">dòng code (JavaScript, Python, CSS, HTML, SQL)</span><span lang="en">lines of code (JavaScript, Python, CSS, HTML, SQL)</span></div></div></div>
+    <p class="asof"><span lang="vi">Số liệu lấy từ các lần chạy thật, tính đến 2026-10-10.</span><span lang="en">Figures come from real runs, as of 2026-10-10.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span><span lang="vi">Quyết định thiết kế</span><span lang="en">Design decisions</span></h2>
+    <article class="dec"><h3><span lang="vi">Chỉ sửa container</span><span lang="en">Fix the container only</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Chất lượng không đổi, nhanh, không cần ffmpeg</span><span lang="en">Quality unchanged, fast, no ffmpeg needed</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Mã hoá lại video</span><span lang="en">Re-encoding the video</span></dd></dl></article><article class="dec"><h3><span lang="vi">Chỉ gửi phần chỉ mục lên máy chủ</span><span lang="en">Send only the index to the server</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Hình và tiếng ở lại trên máy của khách</span><span lang="en">Picture and sound stay on the device</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Gửi cả file lên máy chủ</span><span lang="en">Uploading the whole file to the server</span></dd></dl></article><article class="dec"><h3><span lang="vi">Phông chữ tự lưu</span><span lang="en">Self-hosted fonts</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Trang chỉ nói chuyện với máy chủ của chính nó</span><span lang="en">The page talks only to its own server</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Google Fonts</span><span lang="en">Google Fonts</span></dd></dl></article><article class="dec"><h3><span lang="vi">Không bước build, đóng dấu cache cho CSS và JS</span><span lang="en">No build step, cache stamps on CSS and JS</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Ít bộ phận chuyển động; khách không bao giờ gặp bản lẫn cũ và mới</span><span lang="en">Fewer moving parts; users never get a mix of old and new</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">npm và bundler</span><span lang="en">npm and a bundler</span></dd></dl></article>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span><span lang="vi">Cách kiểm chứng</span><span lang="en">How it is verified</span></h2>
+    <ul lang="vi"><li>190 test Node và 22 test Python phủ xử lý file, máy chủ, cửa hàng và các quy tắc dự án.</li><li>Luồng trên trang được kiểm trong Chrome thật: chỉ phần chỉ mục được gửi và kết quả khớp từng byte với bản gốc.</li><li>API được kiểm trong môi trường chạy cục bộ với cơ sở dữ liệu cục bộ.</li></ul><ul lang="en"><li>190 Node tests and 22 Python tests cover file processing, the server, the shop and the project rules.</li><li>The page flow is checked in a real Chrome: only the index is sent and the output matches the original byte for byte.</li><li>The API is checked in a local runtime with a local database.</li></ul>
+  </section>
+</main>
+<footer>
+  <p><span lang="vi">Mã nguồn các sản phẩm nằm ở kho riêng tư.</span><span lang="en">Source code is kept in private repositories.</span></p>
+  <p><span lang="vi">Liên hệ</span><span lang="en">Contact</span>: <a href="https://www.facebook.com/Exomaly">Facebook</a> · <a href="https://zalo.me/0334934592">Zalo</a> · tdk.exomaly@gmail.com</p>
+  <p class="brand">Truong Dang Khoa — Exomaly Code</p>
+</footer>
+</body>
+</html>

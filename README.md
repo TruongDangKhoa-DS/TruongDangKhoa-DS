@@ -17,6 +17,10 @@ Exomaly là bộ công cụ web nhỏ, gọn, chú trọng quyền riêng tư: x
 
 Mã nguồn các sản phẩm nằm ở kho riêng tư. Bản phát hành của Download có tại [exomaly-download](https://github.com/TruongDangKhoa-DS/exomaly-download).
 
+## Cách các sản phẩm được làm
+
+Mỗi sản phẩm có một trang ngắn: tóm tắt, số liệu thật, các quyết định thiết kế kèm phương án đã loại, và cách kiểm chứng: [truongdangkhoa-ds.github.io/TruongDangKhoa-DS](https://truongdangkhoa-ds.github.io/TruongDangKhoa-DS/).
+
 ## Liên hệ
 
 - Facebook: [facebook.com/Exomaly](https://www.facebook.com/Exomaly)
@@ -41,6 +45,10 @@ Exomaly is a small set of web tools built with privacy in mind: processing happe
 | **Exomaly SarangSon** | A private gift for Thanh Son. Translates Korean text in a photo into Vietnamese: take or pick a picture, the translation appears over the original words, with a vocabulary list | [sarangson.exomaly.com](https://sarangson.exomaly.com) |
 
 Source code is kept in private repositories. Download release builds are available at [exomaly-download](https://github.com/TruongDangKhoa-DS/exomaly-download).
+
+### How the products are built
+
+One short page per product: a summary, real figures, the design decisions with the alternatives rejected, and how it is verified: [truongdangkhoa-ds.github.io/TruongDangKhoa-DS](https://truongdangkhoa-ds.github.io/TruongDangKhoa-DS/?lang=en).
 
 ### Contact
 

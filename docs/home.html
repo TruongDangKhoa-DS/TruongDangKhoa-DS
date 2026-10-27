@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exomaly · Cách làm</title>
+<meta name="description" content="Trang chủ thương hiệu: bầu trời đổi theo giờ và thời tiết nơi bạn đứng, mỗi công cụ là một hành tinh.">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body style="--accent: #8B5CF6">
+<header class="top">
+  <a class="back" href="index.html"><span lang="vi">← Tất cả sản phẩm</span><span lang="en">← All products</span></a>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-set-lang="vi">VI</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
+</header>
+<main>
+  <p class="eyebrow"><span lang="vi">Cách sản phẩm này được làm</span><span lang="en">How this product is built</span></p>
+  <h1>Exomaly</h1>
+  <p class="tagline"><span lang="vi">Trang chủ thương hiệu: bầu trời đổi theo giờ và thời tiết nơi bạn đứng, mỗi công cụ là một hành tinh.</span><span lang="en">Brand home page: a sky that follows the time and weather where you are, with each tool as a planet.</span></p>
+  <p><a class="cta" href="https://exomaly.com"><span lang="vi">Mở sản phẩm</span><span lang="en">Open the product</span> →</a></p>
+
+  <section>
+    <h2><span class="n">1</span><span lang="vi">Tóm tắt</span><span lang="en">Summary</span></h2>
+    <ul lang="vi"><li>Một trang tĩnh (HTML, CSS, JavaScript thuần), không cookie, không tải gì từ máy chủ khác khi mở trang: phông chữ tự lưu, hiệu ứng làm bằng CSS, video nền khoảng 1 MB.</li><li>Bầu trời theo giờ và thời tiết nơi khách đứng: vị trí cấp thành phố (làm tròn 0,1 độ) do hạ tầng cung cấp nên không hiện hộp xin quyền, thời tiết lấy từ MET Norway (CC BY 4.0) và lưu tạm 30 phút.</li><li>Hành tinh thành hạt: cuộn khỏi phần đầu trang thì hành tinh lớn tan thành bụi, đến phần công cụ thì các hạt từ từ khép lại thành hình các hành tinh. Tất cả vẽ trên một canvas, màu lấy từ chính ảnh hành tinh.</li><li>Tôn trọng chế độ giảm chuyển động của hệ điều hành. Video YouTube chỉ tải khi khách bấm. Thống kê lượt xem tự làm và được nói rõ ở chân trang.</li></ul><ul lang="en"><li>A static page (plain HTML, CSS, JavaScript), no cookies, nothing loaded from another server when the page opens: self-hosted fonts, effects made with CSS, a background video of about 1 MB.</li><li>The sky follows the time and weather where the visitor is: a city-level position (rounded to 0.1 degree) supplied by the hosting layer, so there is no permission prompt; weather from MET Norway (CC BY 4.0), cached for 30 minutes.</li><li>Planets as particles: scrolling away from the top dissolves the big planet into dust, and at the tools section the particles slowly close into the shape of the planets. Everything is drawn on one canvas, with colours taken from the planet pictures themselves.</li><li>Respects the operating system&#x27;s reduced-motion setting. The YouTube video loads only when the visitor clicks. Visit statistics are home-made and disclosed in the footer.</li></ul>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span lang="vi">Số liệu</span><span lang="en">By the numbers</span></h2>
+    <div class="stats"><div class="stat"><div class="v"><span lang="vi">141/141</span><span lang="en">141/141</span></div><div class="k"><span lang="vi">kiểm tra trong Chrome thật: bố cục, chuyển động, mọi kiểu thời tiết, VI/EN, điện thoại</span><span lang="en">checks in a real Chrome: layout, motion, every weather, VI/EN, phones</span></div></div><div class="stat"><div class="v"><span lang="vi">56/56</span><span lang="en">56/56</span></div><div class="k"><span lang="vi">kiểm tra hiệu ứng hạt: cuộn, gom thành hình hành tinh, công tắc, phương án dự phòng, điện thoại</span><span lang="en">checks of the particles: scrolling, gathering into planet shapes, the switch, fallbacks, a phone</span></div></div><div class="stat"><div class="v"><span lang="vi">65/65</span><span lang="en">65/65</span></div><div class="k"><span lang="vi">kiểm tra ảnh xem trước khi chia sẻ link cho các trang Exomaly</span><span lang="en">link-preview checks for the Exomaly pages</span></div></div><div class="stat"><div class="v"><span lang="vi">≤ 2 phút</span><span lang="en">≤ 2 min</span></div><div class="k"><span lang="vi">sai số giờ mặt trời mọc và lặn so với dữ liệu thật ở 5 thành phố</span><span lang="en">sunrise and sunset error against real data for 5 cities</span></div></div><div class="stat"><div class="v"><span lang="vi">8.855</span><span lang="en">8.855</span></div><div class="k"><span lang="vi">dòng code (JavaScript, Python, CSS, HTML)</span><span lang="en">lines of code (JavaScript, Python, CSS, HTML)</span></div></div></div>
+    <p class="asof"><span lang="vi">Số liệu lấy từ các lần chạy thật, tính đến 2026-10-22.</span><span lang="en">Figures come from real runs, as of 2026-10-22.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span><span lang="vi">Quyết định thiết kế</span><span lang="en">Design decisions</span></h2>
+    <article class="dec"><h3><span lang="vi">Thời tiết từ MET Norway, gọi qua máy chủ, lưu tạm 30 phút</span><span lang="en">Weather from MET Norway, called through the server, cached for 30 minutes</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Giấy phép CC BY 4.0 cho phép trang thương mại, chỉ cần ghi nguồn</span><span lang="en">The CC BY 4.0 licence allows a commercial site with credit</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Open-Meteo (điều khoản chỉ cho phép phi thương mại)</span><span lang="en">Open-Meteo (its terms allow non-commercial use only)</span></dd></dl></article><article class="dec"><h3><span lang="vi">Vị trí cấp thành phố do hạ tầng cung cấp</span><span lang="en">City-level position supplied by the hosting layer</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Không hiện hộp hỏi quyền vị trí</span><span lang="en">No location permission prompt</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Hỏi vị trí của trình duyệt</span><span lang="en">Asking for the browser&#x27;s location</span></dd></dl></article><article class="dec"><h3><span lang="vi">Phông chữ tự lưu trong repo</span><span lang="en">Fonts self-hosted in the repo</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Trang không gửi địa chỉ IP của khách tới Google</span><span lang="en">The page does not send visitors&#x27; IP addresses to Google</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Tải phông từ Google Fonts</span><span lang="en">Loading the fonts from Google Fonts</span></dd></dl></article><article class="dec"><h3><span lang="vi">Video YouTube chỉ tải khi khách bấm</span><span lang="en">The YouTube video loads only on click</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Trang không gửi yêu cầu nào tới YouTube trước đó</span><span lang="en">The page sends no request to YouTube before that</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Nhúng khung YouTube ngay từ đầu</span><span lang="en">Embedding the YouTube frame up front</span></dd></dl></article><article class="dec"><h3><span lang="vi">Chỉ có ngày và đêm</span><span lang="en">Only day and night</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Ánh sáng ấm của bình minh và hoàng hôn làm hành tinh bị nhạt</span><span lang="en">The warm light of dawn and dusk washed the planet out</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Bốn buổi trong ngày</span><span lang="en">Four times of day</span></dd></dl></article><article class="dec"><h3><span lang="vi">Hạt chỉ chở phần chuyển cảnh, ảnh hành tinh thật vẫn là ảnh</span><span lang="en">The particles only carry the transition, the real planet pictures stay pictures</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Khoảng 900 chấm không vẽ nổi phần thân tối và quầng sáng mềm của hành tinh</span><span lang="en">About 900 dots cannot draw a planet&#x27;s dark body and soft glow</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Thay hẳn ảnh hành tinh bằng hạt</span><span lang="en">Replacing the planet pictures with particles altogether</span></dd></dl></article>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span><span lang="vi">Cách kiểm chứng</span><span lang="en">How it is verified</span></h2>
+    <ul lang="vi"><li>Trang được kiểm trong Chrome thật: bố cục, chuyển động, mọi kiểu thời tiết, hai ngôn ngữ và điện thoại.</li><li>Công thức giờ mặt trời mọc và lặn được đối chiếu với dữ liệu thật ở 5 thành phố.</li><li>Mỗi quy tắc của dự án có một kiểm tra tự động, và kiểm tra đó được chứng minh bằng cách cài lỗi cố ý cho nó bắt.</li></ul><ul lang="en"><li>The page is checked in a real Chrome: layout, motion, every weather, both languages and phones.</li><li>The sunrise and sunset formula is compared with real data for 5 cities.</li><li>Each project rule has an automatic check, and each check is proven by a deliberate mistake it must catch.</li></ul>
+  </section>
+</main>
+<footer>
+  <p><span lang="vi">Mã nguồn các sản phẩm nằm ở kho riêng tư.</span><span lang="en">Source code is kept in private repositories.</span></p>
+  <p><span lang="vi">Liên hệ</span><span lang="en">Contact</span>: <a href="https://www.facebook.com/Exomaly">Facebook</a> · <a href="https://zalo.me/0334934592">Zalo</a> · tdk.exomaly@gmail.com</p>
+  <p class="brand">Truong Dang Khoa — Exomaly Code</p>
+</footer>
+</body>
+</html>
