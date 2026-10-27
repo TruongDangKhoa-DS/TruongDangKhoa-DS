@@ -20,6 +20,7 @@ Mã nguồn các sản phẩm nằm ở kho riêng tư. Bản phát hành của 
 ## Liên hệ
 
 - Facebook: [facebook.com/Exomaly](https://www.facebook.com/Exomaly)
+- Zalo: [0334934592](https://zalo.me/0334934592)
 - Email: tdk.exomaly@gmail.com
 
 ---
@@ -44,4 +45,5 @@ Source code is kept in private repositories. Download release builds are availab
 ### Contact
 
 - Facebook: [facebook.com/Exomaly](https://www.facebook.com/Exomaly)
+- Zalo: [0334934592](https://zalo.me/0334934592)
 - Email: tdk.exomaly@gmail.com
