@@ -365,29 +365,30 @@
       "name": "Exomaly SarangSon",
       "url": "https://sarangson.exomaly.com",
       "accent": "#C2E8F5",
-      "asof": "2026-10-27",
+      "asof": "2026-10-28",
       "tagline": {
         "vi": "Quà tặng riêng cho Thanh Son. Dịch chữ Hàn trong ảnh sang tiếng Việt, bản dịch hiện đè lên đúng chỗ chữ gốc.",
         "en": "A private gift for Thanh Son. Translates Korean text in a photo into Vietnamese, with the translation shown over the original words."
       },
       "summary": {
         "vi": [
-          "Đọc chữ Hàn trong ảnh, dịch từng dòng sang tiếng Việt và vẽ bản dịch đè lên đúng vị trí trên ảnh, kèm danh sách từ vựng (từ, dạng từ điển, phiên âm, nghĩa) và nút đọc to để nghe phát âm.",
-          "Dữ liệu đi đâu: ảnh đi từ trình duyệt tới máy chủ của dự án rồi tới một dịch vụ dịch tự động. Không có cơ sở dữ liệu, không lưu ảnh hay văn bản. Chế độ chữ in đọc ảnh ngay trên máy và chỉ gửi phần chữ đi dịch.",
-          "Dùng các gói miễn phí, người dùng không phải trả tiền. HTML, CSS, JavaScript thuần, không bước build."
+          "Đọc chữ Hàn trong ảnh, dịch từng dòng sang tiếng Việt và vẽ bản dịch đè lên đúng vị trí trên ảnh, kèm danh sách từ vựng (từ, dạng từ điển, phiên âm, nghĩa), nút đọc to để nghe phát âm và nút giải thích ngữ pháp.",
+          "Dữ liệu đi đâu: ảnh đi từ trình duyệt tới máy chủ của dự án rồi tới một dịch vụ dịch tự động. Không lưu ảnh hay văn bản; chỉ ghi số liệu sử dụng ẩn danh (thời điểm, chế độ, độ trễ, mã lỗi), và trình duyệt bật Do Not Track thì không ghi gì. Chế độ chữ in đọc ảnh ngay trên máy và chỉ gửi phần chữ đi dịch.",
+          "Người dùng không phải trả tiền. HTML, CSS, JavaScript thuần, không bước build."
         ],
         "en": [
-          "Reads Korean text in a photo, translates each line into Vietnamese and draws the translation in place over the image, with a vocabulary list (word, dictionary form, romanization, meaning) and a read-aloud button for pronunciation.",
-          "Where data goes: the image goes from the browser to the project's server, then to an automatic translation service. No database, no images or text stored. Printed mode reads the image on the device and only sends the text for translation.",
-          "Uses free tiers, so users pay nothing. Plain HTML, CSS and JavaScript, no build step."
+          "Reads Korean text in a photo, translates each line into Vietnamese and draws the translation in place over the image, with a vocabulary list (word, dictionary form, romanization, meaning), a read-aloud button for pronunciation and a grammar explanation button.",
+          "Where data goes: the image goes from the browser to the project's server, then to an automatic translation service. No images or text stored; only anonymous usage figures are recorded (time, mode, latency, error code), and nothing at all when the browser sends Do Not Track. Printed mode reads the image on the device and only sends the text for translation.",
+          "Users pay nothing. Plain HTML, CSS and JavaScript, no build step."
         ]
       },
       "stats": [
-        {"v": "206/206", "vi": "kiểm tra giao diện (27/10/2026)", "en": "UI checks (2026-10-27)"},
-        {"v": "44/44", "vi": "test máy chủ với dịch vụ giả lập: giới hạn đầu vào, hết thời gian, mất mạng, phương án dự phòng", "en": "server tests with a simulated service: input limits, timeout, network down, fallback"},
-        {"v": "15/15", "vi": "lỗi cài cố ý đều bị bộ kiểm quy tắc bắt được", "en": "deliberate faults all caught by the rule checker"},
+        {"v": "213/213", "vi": "kiểm tra giao diện (28/10/2026)", "en": "UI checks (2026-10-28)"},
+        {"v": "149/149", "vi": "test máy chủ với dịch vụ giả lập: giới hạn đầu vào, hết thời gian, mất mạng, phương án dự phòng", "en": "server tests with a simulated service: input limits, timeout, network down, fallback"},
+        {"v": "51/51", "vi": "test số liệu sử dụng ẩn danh: không có cột nội dung, xoá chi tiết sau một năm", "en": "anonymous usage-figure tests: no content columns, details deleted after a year"},
+        {"v": "27/27", "vi": "lỗi cài cố ý đều bị bộ kiểm quy tắc bắt được", "en": "deliberate faults all caught by the rule checker"},
         {"v": "0 → 18–35", "vi": "số dòng chữ in đọc được trên ảnh mẫu khi tách một lần gọi thành hai (đo 3 lần)", "en": "printed lines read on the sample image when one call was split into two (measured 3 times)"},
-        {"v": "8.284", "vi": "dòng code (JavaScript, Python, CSS, HTML, PowerShell)", "en": "lines of code (JavaScript, Python, CSS, HTML, PowerShell)"}
+        {"v": "10.122", "vi": "dòng code (JavaScript, Python, CSS, HTML, PowerShell, SQL)", "en": "lines of code (JavaScript, Python, CSS, HTML, PowerShell, SQL)"}
       ],
       "decisions": [
         {
@@ -414,12 +415,12 @@
       "verify": {
         "vi": [
           "Máy chủ được kiểm với dịch vụ giả lập: giới hạn đầu vào, hết thời gian, mất mạng và phương án dự phòng.",
-          "Giao diện được kiểm 206 bước; trang đã phát hành được kiểm lại bằng các kiểm tra API thật (25/10/2026).",
+          "Giao diện được kiểm 213 bước; trang đã phát hành được kiểm lại bằng các kiểm tra API thật (25/10/2026).",
           "Quyết định tách hai lần gọi dựa trên số đo thật, không phải phỏng đoán."
         ],
         "en": [
           "The server is tested with a simulated service: input limits, timeout, network down and fallback.",
-          "The interface is checked in 206 steps; the released site was checked again with real API checks (2026-10-25).",
+          "The interface is checked in 213 steps; the released site was checked again with real API checks (2026-10-25).",
           "The decision to split into two calls rests on a measurement, not a guess."
         ]
       }
