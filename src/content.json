@@ -384,7 +384,7 @@
       },
       "stats": [
         {"v": "213/213", "vi": "kiểm tra giao diện (28/10/2026)", "en": "UI checks (2026-10-28)"},
-        {"v": "149/149", "vi": "test máy chủ với dịch vụ giả lập: giới hạn đầu vào, hết thời gian, mất mạng, phương án dự phòng", "en": "server tests with a simulated service: input limits, timeout, network down, fallback"},
+        {"v": "147/147", "vi": "test máy chủ với dịch vụ giả lập: giới hạn đầu vào, hết thời gian, mất mạng, phương án dự phòng", "en": "server tests with a simulated service: input limits, timeout, network down, fallback"},
         {"v": "51/51", "vi": "test số liệu sử dụng ẩn danh: không có cột nội dung, xoá chi tiết sau một năm", "en": "anonymous usage-figure tests: no content columns, details deleted after a year"},
         {"v": "27/27", "vi": "lỗi cài cố ý đều bị bộ kiểm quy tắc bắt được", "en": "deliberate faults all caught by the rule checker"},
         {"v": "0 → 18–35", "vi": "số dòng chữ in đọc được trên ảnh mẫu khi tách một lần gọi thành hai (đo 3 lần)", "en": "printed lines read on the sample image when one call was split into two (measured 3 times)"},
