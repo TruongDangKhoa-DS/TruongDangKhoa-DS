@@ -367,14 +367,14 @@
       }
     },
     {
-      "slug": "sarangson",
-      "name": "Exomaly SarangSon",
-      "url": "https://sarangson.exomaly.com",
+      "slug": "geulbit",
+      "name": "Exomaly Geulbit",
+      "url": "https://geulbit.exomaly.com",
       "accent": "#C2E8F5",
       "asof": "2026-10-28",
       "tagline": {
-        "vi": "Quà tặng riêng cho Thanh Son. Dịch chữ Hàn trong ảnh sang tiếng Việt, bản dịch hiện đè lên đúng chỗ chữ gốc.",
-        "en": "A private gift for Thanh Son. Translates Korean text in a photo into Vietnamese, with the translation shown over the original words."
+        "vi": "Dịch chữ Hàn trong ảnh sang tiếng Việt, bản dịch hiện đè lên đúng chỗ chữ gốc.",
+        "en": "Translates Korean text in a photo into Vietnamese, with the translation shown over the original words."
       },
       "summary": {
         "vi": [
