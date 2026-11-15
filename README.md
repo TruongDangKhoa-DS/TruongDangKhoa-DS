@@ -14,9 +14,12 @@ Exomaly là bộ công cụ web nhỏ, gọn, chú trọng quyền riêng tư: x
 | **Exomaly Upscale** | Phóng ảnh lên 2K hoặc 4K ngay trong trình duyệt, ảnh không rời khỏi máy bạn | [upscale.exomaly.com](https://upscale.exomaly.com) |
 | **Exomaly LIMS** | Quản lý phòng thử nghiệm theo ISO/IEC 17025: nhận mẫu, kết quả, soát xét, phiếu kết quả; dự đoán thời gian trả kết quả và phát hiện kết quả bất thường | [lims.exomaly.com](https://lims.exomaly.com) |
 | **Exomaly Geulbit** | Dịch chữ Hàn trong ảnh sang tiếng Việt: chụp hoặc chọn ảnh, bản dịch hiện đè lên đúng chỗ chữ gốc, kèm từ vựng | [geulbit.exomaly.com](https://geulbit.exomaly.com) |
-| **Exomaly Deck** | Bàn điều khiển âm thanh cho sự kiện, chạy ngay trong trình duyệt và không cần mạng: nhạc nền, hiệu ứng, fade, crossfade, phím tắt sân khấu, dò BPM và tone. Thiết kế gốc bởi HoangPham; Exomaly tích hợp và chỉnh sửa. | [deck.exomaly.com](https://deck.exomaly.com) |
 
 Mã nguồn các sản phẩm nằm ở kho riêng tư. Bản phát hành của Download có tại [exomaly-download](https://github.com/TruongDangKhoa-DS/exomaly-download).
+
+## Sắp ra mắt
+
+- **Exomaly Deck**: bàn điều khiển âm thanh cho sự kiện, chạy ngay trong trình duyệt và không cần mạng: nhạc nền, hiệu ứng, fade, crossfade, phím tắt sân khấu, dò BPM và tone. Thiết kế gốc bởi HoangPham; Exomaly tích hợp và chỉnh sửa.
 
 ## Cách các sản phẩm được làm
 
@@ -44,9 +47,12 @@ Exomaly is a small set of web tools built with privacy in mind: processing happe
 | **Exomaly Upscale** | Upscales images to 2K or 4K right in the browser; your image never leaves your device | [upscale.exomaly.com](https://upscale.exomaly.com) |
 | **Exomaly LIMS** | Laboratory management to ISO/IEC 17025: sample receipt, results, review, test reports; turnaround-time prediction and anomaly detection in results | [lims.exomaly.com](https://lims.exomaly.com) |
 | **Exomaly Geulbit** | Translates Korean text in a photo into Vietnamese: take or pick a picture, the translation appears over the original words, with a vocabulary list | [geulbit.exomaly.com](https://geulbit.exomaly.com) |
-| **Exomaly Deck** | A sound desk for live events that runs in your browser, fully offline: background music and effects with fades, crossfade, stage hotkeys, BPM and key detection. Originally designed by HoangPham; integrated and adapted by Exomaly. | [deck.exomaly.com](https://deck.exomaly.com) |
 
 Source code is kept in private repositories. Download release builds are available at [exomaly-download](https://github.com/TruongDangKhoa-DS/exomaly-download).
+
+### Coming soon
+
+- **Exomaly Deck**: a sound desk for live events that runs in your browser, fully offline: background music and effects with fades, crossfade, stage hotkeys, BPM and key detection. Originally designed by HoangPham; integrated and adapted by Exomaly.
 
 ### How the products are built
 
