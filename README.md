@@ -1,4 +1,4 @@
-# Truong Dang Khoa — Exomaly Code
+# Truong Dang Khoa — Exomaly
 
 **Tiếng Việt** · [English](#english)
 
