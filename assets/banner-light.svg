@@ -17,6 +17,6 @@
     <circle r="4" fill="#6D28D9" stroke="none"/>
   </g>
   <text x="64" y="112" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="46" font-weight="700" fill="#0F172A">Truong Dang Khoa — Exomaly</text>
-  <text x="64" y="156" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" fill="#475569">Small, sharp tools that respect your privacy.</text>
+  <text x="64" y="156" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="20" fill="#475569">Small, sharp tools for labs, video and images.</text>
   <rect x="64" y="184" width="168" height="3" rx="1.5" fill="url(#g)"/>
 </svg>
