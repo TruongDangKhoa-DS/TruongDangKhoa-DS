@@ -28,8 +28,7 @@ Mỗi sản phẩm có một trang ngắn: tóm tắt, số liệu thật, các 
 ## Liên hệ
 
 - Facebook: [facebook.com/Exomaly](https://www.facebook.com/Exomaly)
-- Zalo: [0334934592](https://zalo.me/0334934592)
-- Email: tdk.exomaly@gmail.com
+- Zalo: [Nhắn tin trên Zalo](https://zalo.me/0334934592)
 
 ---
 
@@ -61,5 +60,4 @@ One short page per product: a summary, real figures, the design decisions with t
 ### Contact
 
 - Facebook: [facebook.com/Exomaly](https://www.facebook.com/Exomaly)
-- Zalo: [0334934592](https://zalo.me/0334934592)
-- Email: tdk.exomaly@gmail.com
+- Zalo: [Message on Zalo](https://zalo.me/0334934592)

@@ -18,7 +18,6 @@ LANGS = ("vi", "en")
 SITE_NAME = "Truong Dang Khoa — Exomaly"
 FACEBOOK = "https://www.facebook.com/Exomaly"
 ZALO = "https://zalo.me/0334934592"
-EMAIL = "tdk.exomaly@gmail.com"
 
 Text = dict[str, str]
 
@@ -69,7 +68,7 @@ def shell(title: str, description: str, accent: str, body: str, back: bool = Tru
 {body}
 <footer>
   <p>{both("Mã nguồn các sản phẩm nằm ở kho riêng tư.", "Source code is kept in private repositories.")}</p>
-  <p>{both("Liên hệ", "Contact")}: <a href="{FACEBOOK}">Facebook</a> · <a href="{ZALO}">Zalo</a> · {esc(EMAIL)}</p>
+  <p>{both("Liên hệ", "Contact")}: <a href="{FACEBOOK}">Facebook</a> · <a href="{ZALO}">Zalo</a></p>
   <p class="brand">{esc(SITE_NAME)}</p>
 </footer>
 </body>
