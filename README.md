@@ -20,6 +20,17 @@ Mã nguồn các sản phẩm nằm ở kho riêng tư. Bản phát hành của 
 ## Sắp ra mắt
 
 - **Exomaly Deck**: bàn điều khiển âm thanh cho sự kiện, chạy ngay trong trình duyệt và không cần mạng: nhạc nền, hiệu ứng, fade, crossfade, phím tắt sân khấu, dò BPM và tone. Thiết kế gốc bởi HoangPham; Exomaly tích hợp và chỉnh sửa.
+- **Exomaly Epochfold**: quay màn hình kèm âm thanh hệ thống, mic và webcam; cắt đoạn, zoom và xuất MP4 đến 60 khung hình/giây; có bản web (Chrome, Edge) và bản Windows.
+
+## Phần mềm tự thiết kế cho riêng tôi
+
+Các phần mềm tôi tự thiết kế để dùng cá nhân trên máy của mình, không phát hành và không có địa chỉ công khai.
+
+| Phần mềm | Làm gì | Địa chỉ |
+|---|---|---|
+| **Exomaly Signal** | Bảng theo dõi nằm cạnh khung chat trong VS Code: việc đang chạy, lệnh nền, lượng ngữ cảnh đã dùng và các phiên khác đang mở trên máy | Tự thiết kế cho cá nhân, không phát hành |
+| **Exomaly Orbit** | Ứng dụng Windows chỉ đọc: theo dõi nhánh git, commit chờ push và tiến trình nặng trên máy, báo qua thông báo Windows, có bảng điều khiển 3D | Tự thiết kế cho cá nhân, không phát hành |
+| **Exomaly Ephemeris** | Mặt đồng hồ cho Garmin Forerunner 165: màu hành tinh trên nền đen, viết bằng Monkey C | Tự thiết kế cho cá nhân, không phát hành |
 
 ## Cách các sản phẩm được làm
 
@@ -52,6 +63,17 @@ Source code is kept in private repositories. Infall release builds are available
 ### Coming soon
 
 - **Exomaly Deck**: a sound desk for live events that runs in your browser, fully offline: background music and effects with fades, crossfade, stage hotkeys, BPM and key detection. Originally designed by HoangPham; integrated and adapted by Exomaly.
+- **Exomaly Epochfold**: screen recording with system audio, microphone and webcam; trim, zoom and export MP4 up to 60 frames per second; a web version (Chrome, Edge) and a Windows version.
+
+### Software I designed for my own use
+
+Software I designed for personal use on my own computer: not released and without a public address.
+
+| Software | What it does | Address |
+|---|---|---|
+| **Exomaly Signal** | A panel beside the chat window in VS Code: what is running, background commands, how much context is used, and the other sessions open on the machine | Self-designed for personal use, not released |
+| **Exomaly Orbit** | A read-only Windows app: watches git branches, commits waiting to be pushed and heavy processes on the machine, reports through Windows notifications, with a 3D dashboard | Self-designed for personal use, not released |
+| **Exomaly Ephemeris** | A watch face for the Garmin Forerunner 165: planet colour on a black background, written in Monkey C | Self-designed for personal use, not released |
 
 ### How the products are built
 
