@@ -1,9 +1,9 @@
 English · [Tiếng Việt](README.vi.md)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-  <img src="assets/banner-light.svg" alt="Truong Dang Khoa — Exomaly" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-orbit-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-orbit-light.svg">
+  <img src="assets/banner-orbit-light.svg" alt="Truong Dang Khoa — Exomaly: data science and tools for labs, video and images" width="100%">
 </picture>
 
 I work in data science and build practical software and web tools under the Exomaly brand ([exomaly.com](https://exomaly.com)): a laboratory system that predicts turnaround time and flags unusual results, plus everyday tools for video, images and translation. Infall and Upscale do all their work on your own device; Remux sends only the file's index to the server, so picture and sound never leave your device.

@@ -1,9 +1,9 @@
 [English](README.md) · Tiếng Việt
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-  <img src="assets/banner-light.svg" alt="Truong Dang Khoa — Exomaly" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-orbit-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-orbit-light.svg">
+  <img src="assets/banner-orbit-light.svg" alt="Truong Dang Khoa — Exomaly: Data Science và công cụ cho phòng thử nghiệm, video, ảnh" width="100%">
 </picture>
 
 Tôi làm Data Science và xây các công cụ phần mềm, web thực dụng dưới thương hiệu Exomaly ([exomaly.com](https://exomaly.com)): một hệ thống cho phòng thử nghiệm có dự đoán thời gian trả kết quả và phát hiện kết quả bất thường, cùng các công cụ tiện dụng cho video, ảnh và dịch thuật. Infall và Upscale xử lý hoàn toàn trên máy của bạn; Remux chỉ gửi phần mục lục của file lên máy chủ, hình và tiếng không rời khỏi máy bạn.
