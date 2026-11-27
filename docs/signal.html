@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exomaly Signal · Cách làm</title>
+<meta name="description" content="Bảng theo dõi nằm cạnh khung chat trong VS Code: việc đang chạy, lệnh nền, lượng ngữ cảnh đã dùng và các phiên làm việc khác trên máy.">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body style="--accent: #38BDF8">
+<header class="top">
+  <a class="back" href="index.html"><span lang="vi">← Tất cả sản phẩm</span><span lang="en">← All products</span></a>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-set-lang="vi">VI</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
+</header>
+<main>
+  <p class="eyebrow"><span lang="vi">Cách sản phẩm này được làm</span><span lang="en">How this product is built</span></p>
+  <h1>Exomaly Signal</h1>
+  <p class="tagline"><span lang="vi">Bảng theo dõi nằm cạnh khung chat trong VS Code: việc đang chạy, lệnh nền, lượng ngữ cảnh đã dùng và các phiên làm việc khác trên máy.</span><span lang="en">A monitoring pane beside the chat in VS Code: what is running, background commands, how much context has been used, and the other sessions on the machine.</span></p>
+  <p class="tagline"><span lang="vi">Tự thiết kế cho cá nhân, không phát hành.</span><span lang="en">Self-designed for personal use, not released.</span></p>
+
+  <section>
+    <h2><span class="n">1</span><span lang="vi">Tóm tắt</span><span lang="en">Summary</span></h2>
+    <ul lang="vi"><li>Bảng cho biết pha hiện tại (chờ, nghĩ, viết, chạy lệnh), danh sách lệnh của lượt và của phiên, lệnh nền, lượng ngữ cảnh đã dùng và tốc độ tăng mỗi lượt, các phiên khác trên máy và thời gian chạy test.</li><li>Dữ liệu không rời máy: mod không gọi mạng, chỉ đọc dữ liệu có sẵn trên máy và ghi một thẻ nhỏ cho mỗi phiên để các phiên thấy nhau.</li><li>Chỉ quan sát: mod không đổi quyết định quyền hay kết quả của bất kỳ lệnh nào. Một file TSX do engine mod của khung chat nạp thẳng; không npm, không bundler, không thư viện ngoài.</li></ul><ul lang="en"><li>The pane shows the current phase (waiting, thinking, writing, running a command), the commands of the turn and of the session, background commands, how much context has been used and how fast it grows per turn, the other sessions on the machine, and test timings.</li><li>Data never leaves the machine: the mod makes no network calls, only reads data already on the machine and writes one small card per session so sessions can see each other.</li><li>Observe only: the mod never changes a permission decision or the result of any command. One TSX file loaded directly by the chat&#x27;s mod engine; no npm, no bundler, no third-party library.</li></ul>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span lang="vi">Số liệu</span><span lang="en">By the numbers</span></h2>
+    <div class="stats"><div class="stat"><div class="v"><span lang="vi">159/159</span><span lang="en">159/159</span></div><div class="k"><span lang="vi">ca test hàm thuần và phần vẽ chạy qua engine thật</span><span lang="en">tests of pure functions and of drawing through the real engine</span></div></div><div class="stat"><div class="v"><span lang="vi">579/579</span><span lang="en">579/579</span></div><div class="k"><span lang="vi">lỗi cài cố ý bị test bắt (510 vào hàm thuần, 69 vào phần vẽ)</span><span lang="en">deliberate bugs caught by the tests (510 in pure functions, 69 in drawing)</span></div></div><div class="stat"><div class="v"><span lang="vi">17</span><span lang="en">17</span></div><div class="k"><span lang="vi">ca test cho công cụ dựng nhật ký theo ngày từ thẻ phiên cũ (thẻ hỏng, chạy hai lần, không đè file có sẵn)</span><span lang="en">test cases for the tool that builds the daily log from old session cards (broken cards, running twice, never overwriting existing files)</span></div></div><div class="stat"><div class="v"><span lang="vi">4</span><span lang="en">4</span></div><div class="k"><span lang="vi">quy tắc dự án</span><span lang="en">project rules</span></div></div><div class="stat"><div class="v"><span lang="vi">5.860</span><span lang="en">5,860</span></div><div class="k"><span lang="vi">dòng code không trống (TSX 2317, TS 2143, Python 1400)</span><span lang="en">non-empty lines of code (TSX 2317, TS 2143, Python 1400)</span></div></div><div class="stat"><div class="v"><span lang="vi">7 + 13</span><span lang="en">7 + 13</span></div><div class="k"><span lang="vi">mục tài liệu ARCHITECTURE + GUIDE, mỗi bản có tiếng Việt và tiếng Anh</span><span lang="en">sections of ARCHITECTURE + GUIDE docs, each in Vietnamese and English</span></div></div></div>
+    <p class="asof"><span lang="vi">Số liệu lấy từ các lần chạy thật, tính đến 2026-11-17.</span><span lang="en">Figures come from real runs, as of 2026-11-17.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span><span lang="vi">Quyết định thiết kế</span><span lang="en">Design decisions</span></h2>
+    <article class="dec"><h3><span lang="vi">Một file TSX, không npm, không bundler</span><span lang="en">One TSX file, no npm, no bundler</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Engine nạp TSX trực tiếp; không có gì phải cài hay cập nhật</span><span lang="en">The engine loads TSX directly; nothing to install or update</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Nhiều module và bước build: thêm việc mà không thêm gì ở quy mô này</span><span lang="en">Several modules and a build step: more work with no gain at this size</span></dd></dl></article><article class="dec"><h3><span lang="vi">Chỉ quan sát, không chạy lệnh từ mod</span><span lang="en">Observe only, run no commands from the mod</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Mod chạy trong chính tiến trình của khung chat; không được làm đổi hay chậm việc đang làm</span><span lang="en">The mod runs inside the chat&#x27;s own process; it must not change or slow the work in progress</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Chạy git từ mod để nhắc nhánh chờ push: tác giả không muốn mod chạy lệnh, và engine chỉ có cách đó ở bản dòng lệnh</span><span lang="en">Running git from the mod to flag unpushed branches: the author does not want the mod running commands, and the engine offers that only in the command-line version</span></dd></dl></article><article class="dec"><h3><span lang="vi">Thẻ phiên trên đĩa để các phiên thấy nhau</span><span lang="en">Session cards on disk so sessions see each other</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Mỗi cửa sổ có bản mod riêng; một thư mục thẻ là cách đơn giản nhất, không cần máy chủ</span><span lang="en">Each window has its own copy of the mod; a card folder is the simplest way, with no server</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Đọc lại bản ghi phiên để tính lượng ngữ cảnh cả ngày: engine không đọc file lớn hơn 4 MiB</span><span lang="en">Re-reading session transcripts for the day&#x27;s total: the engine does not read files over 4 MiB</span></dd></dl></article><article class="dec"><h3><span lang="vi">Hàm thuần tách khỏi phần vẽ</span><span lang="en">Pure functions kept apart from drawing</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Phần tính test được nhanh, không cần dựng giao diện; phần vẽ có test riêng trên engine thật</span><span lang="en">The computations test fast without building a UI; drawing has its own tests on the real engine</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Chỉ xem ảnh chụp: đã có lần cả bảng trống mà test hàm thuần không bắt được</span><span lang="en">Screenshots only: once the whole pane went blank and the pure-function tests could not catch it</span></dd></dl></article>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span><span lang="vi">Cách kiểm chứng</span><span lang="en">How it is verified</span></h2>
+    <ul lang="vi"><li>159 ca test chạy qua engine mod thật, gồm cả hàm thuần lẫn phần vẽ; kiểm kiểu báo 0 lỗi mới so với baseline.</li><li>Để chắc các test bắt được lỗi, 579 lỗi cài cố ý (510 vào hàm thuần, 69 vào phần vẽ) đều bị bắt; test nào không đỏ thì viết thêm ca.</li><li>Mỗi thay đổi giao diện được xem bằng ảnh chụp bảng thật trong VS Code, vì có lần cả bảng trống mà test hàm thuần không bắt được.</li></ul><ul lang="en"><li>159 tests run through the real mod engine, covering both pure functions and drawing; the type check reports 0 new errors against the baseline.</li><li>To make sure the tests catch real faults, 579 deliberate bugs (510 in pure functions, 69 in drawing) were all caught; any test that stays green gets a new case.</li><li>Every interface change is looked at in a screenshot of the real pane in VS Code, because once the whole pane went blank and the pure-function tests could not catch it.</li></ul>
+  </section>
+</main>
+<footer>
+  <p><span lang="vi">Mã nguồn các sản phẩm nằm ở kho riêng tư.</span><span lang="en">Source code is kept in private repositories.</span></p>
+  <p><span lang="vi">Liên hệ</span><span lang="en">Contact</span>: <a href="https://www.facebook.com/Exomaly">Facebook</a> · <a href="https://zalo.me/0334934592">Zalo</a></p>
+  <p class="brand">Truong Dang Khoa — Exomaly</p>
+</footer>
+</body>
+</html>

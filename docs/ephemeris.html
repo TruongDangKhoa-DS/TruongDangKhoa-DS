@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exomaly Ephemeris · Cách làm</title>
+<meta name="description" content="Mặt đồng hồ Garmin Forerunner 165 viết bằng Monkey C: một hệ hành tinh tự tạo quay đúng chu kỳ trên nền đen AMOLED.">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body style="--accent: #62F3F4">
+<header class="top">
+  <a class="back" href="index.html"><span lang="vi">← Tất cả sản phẩm</span><span lang="en">← All products</span></a>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-set-lang="vi">VI</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
+</header>
+<main>
+  <p class="eyebrow"><span lang="vi">Cách sản phẩm này được làm</span><span lang="en">How this product is built</span></p>
+  <h1>Exomaly Ephemeris</h1>
+  <p class="tagline"><span lang="vi">Mặt đồng hồ Garmin Forerunner 165 viết bằng Monkey C: một hệ hành tinh tự tạo quay đúng chu kỳ trên nền đen AMOLED.</span><span lang="en">A Garmin Forerunner 165 watch face written in Monkey C: a made-up planetary system turning at its true periods on AMOLED black.</span></p>
+  <p class="tagline"><span lang="vi">Tự thiết kế cho cá nhân, không phát hành.</span><span lang="en">Self-designed for personal use, not released.</span></p>
+
+  <section>
+    <h2><span class="n">1</span><span lang="vi">Tóm tắt</span><span lang="en">Summary</span></h2>
+    <ul lang="vi"><li>Mặt orrery trên nền đen AMOLED: giờ, ngày, pin; nửa trên là bầu trời thật, nửa dưới là hệ hành tinh giả định (sao K2V và 8 hành tinh, mỗi hành tinh một sản phẩm Exomaly) quay đúng chu kỳ, kèm đường cong ánh sáng, nhịp tim, bước chân và dấu &quot;đang đi qua&quot; khi một hành tinh qua đĩa sao.</li><li>Chạy hoàn toàn trên đồng hồ: không mạng, không quyền Communications, không lưu gì.</li><li>Màn hình luôn bật chỉ hiện giờ:phút màu xám, dịch vị trí mỗi phút, ngân sách 8% điểm ảnh sáng để chống lưu ảnh trên AMOLED. Công nghệ: Monkey C và Connect IQ SDK 9.3.0; công cụ build và test bằng Python thư viện chuẩn.</li></ul><ul lang="en"><li>An orrery face on AMOLED black: time, date, battery; the real sky in the upper half, a made-up planetary system below (a K2V star and 8 planets, one per Exomaly product) turning at their true periods, with a light curve, heart rate, steps and a &quot;transiting now&quot; mark when a planet crosses the star.</li><li>Runs entirely on the watch: no network, no Communications permission, nothing stored.</li><li>The always-on display shows only grey hour:minute, shifted every minute, with an 8% lit-pixel budget against AMOLED burn-in. Technology: Monkey C and Connect IQ SDK 9.3.0; build and test tools in standard-library Python.</li></ul>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span lang="vi">Số liệu</span><span lang="en">By the numbers</span></h2>
+    <div class="stats"><div class="stat"><div class="v"><span lang="vi">96/96</span><span lang="en">96/96</span></div><div class="k"><span lang="vi">unit test chạy trong simulator, gồm 23 ca vàng của hệ tự tạo và 8 ca vàng cùng 6 ca chữ của sự kiện hệ Exomaly</span><span lang="en">unit tests run in the simulator, including 23 golden cases of the made-up system and 8 golden cases plus 6 text cases of the system event</span></div></div><div class="stat"><div class="v"><span lang="vi">77/77</span><span lang="en">77/77</span></div><div class="k"><span lang="vi">lỗi cài vào phần tính toán đều làm unit test đỏ</span><span lang="en">mutants planted in the computations all turned the unit tests red</span></div></div><div class="stat"><div class="v"><span lang="vi">8/8</span><span lang="en">8/8</span></div><div class="k"><span lang="vi">lỗi cài vào mã sự kiện đều bị bắt</span><span lang="en">mutants planted in the event code all caught</span></div></div><div class="stat"><div class="v"><span lang="vi">36/36</span><span lang="en">36/36</span></div><div class="k"><span lang="vi">luật tự kiểm của hệ hành tinh tự tạo</span><span lang="en">self-check rules of the made-up planetary system</span></div></div><div class="stat"><div class="v"><span lang="vi">3,2%</span><span lang="en">3.2%</span></div><div class="k"><span lang="vi">điểm ảnh sáng cao nhất ở chế độ màn hình luôn bật, đo trên 4 phút simulator (ngân sách tự đặt 8%, Garmin dưới 10%); 0 điểm sáng liền 4 phút</span><span lang="en">peak lit pixels in always-on mode, measured over 4 simulator minutes (own budget 8%, Garmin under 10%); 0 pixels lit 4 minutes in a row</span></div></div><div class="stat"><div class="v"><span lang="vi">0</span><span lang="en">0</span></div><div class="k"><span lang="vi">điểm ảnh lệch khi so ảnh trước và sau lần dọn code</span><span lang="en">pixels differ in the before/after image comparison of a code clean-up</span></div></div></div>
+    <p class="asof"><span lang="vi">Số liệu lấy từ các lần chạy thật, tính đến 2026-11-20.</span><span lang="en">Figures come from real runs, as of 2026-11-20.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span><span lang="vi">Quyết định thiết kế</span><span lang="en">Design decisions</span></h2>
+    <article class="dec"><h3><span lang="vi">Vẽ tay trong onUpdate</span><span lang="en">Hand drawing in onUpdate</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Kiểm soát từng điểm ảnh ở chế độ màn hình luôn bật; vẽ được đường nhịp tim</span><span lang="en">Pixel-level control in always-on mode; can draw the heart-rate curve</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Layout XML: khó kiểm soát điểm ảnh sáng</span><span lang="en">XML layouts: hard to control lit pixels</span></dd></dl></article><article class="dec"><h3><span lang="vi">Hàm tính toán tách khỏi phần vẽ</span><span lang="en">Computations kept apart from drawing</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Kiểm được bằng unit test và cài lỗi</span><span lang="en">Checkable by unit tests and mutation testing</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Tính ngay trong hàm vẽ: chỉ kiểm được bằng mắt</span><span lang="en">Computing inside draw code: checkable only by eye</span></dd></dl></article><article class="dec"><h3><span lang="vi">Hệ hành tinh tự tạo, có kiểm vật lý</span><span lang="en">Made-up planetary system with physics checks</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Exomaly không phải Hệ Mặt Trời; một hệ giả định tự kiểm luật Kepler, ổn định Hill, vùng sống được</span><span lang="en">Exomaly is not the Solar System; a made-up system self-checks Kepler, Hill stability and the habitable zone</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Hệ Mặt Trời thật; hệ ngoại hành tinh thật (không đặt hệ giả định vào sao thật)</span><span lang="en">The real Solar System; a real exoplanet system (no made-up system on a real star)</span></dd></dl></article><article class="dec"><h3><span lang="vi">Quỹ đạo tròn, một phép chia lấy dư</span><span lang="en">Circular orbits, one remainder operation</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Vị trí hôm nay tính rẻ trên đồng hồ, tua mượt</span><span lang="en">The position for today is cheap on the watch, rewind is smooth</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Giải phương trình Kepler mỗi lần vẽ</span><span lang="en">Solving the Kepler equation at every draw</span></dd></dl></article><article class="dec"><h3><span lang="vi">Tự viết mặt đồng hồ</span><span lang="en">Own watch face</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Đúng ý, học được, không vướng giấy phép</span><span lang="en">Exactly as wanted, a learning project, no licence issues</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Garmin Face It, chép mặt đồng hồ mã nguồn mở</span><span lang="en">Garmin Face It, copying an open-source face</span></dd></dl></article>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span><span lang="vi">Cách kiểm chứng</span><span lang="en">How it is verified</span></h2>
+    <ul lang="vi"><li>96 unit test chạy trong simulator; luật lõi của hệ tự tạo có ca vàng với đáp án tính tay. Cài lỗi: 77 lỗi vào phần tính toán, 8 lỗi vào mã sự kiện, 19 lỗi vào bộ kiểm quy tắc, mỗi lỗi phải bị bắt.</li><li>Ảnh chụp chế độ màn hình luôn bật được đếm điểm ảnh sáng trước khi cài lên đồng hồ. Đo thật bắt được một thiết kế sai: cách dịch giờ đầu tiên (lưới nhỏ 8 px) vẫn để 139 điểm ảnh sáng suốt 4 phút; thiết kế lại thành hai dải cách nhau hơn chiều cao chữ, đo lại còn 0.</li><li>Máy kiểm bắt cả hệ hành tinh giả định: hai lần đầu bảng thông số trượt luật ổn định quỹ đạo (khoảng cách tới hàng xóm dưới 10 bán kính Hill), nên phải đổi chu kỳ và cỡ hành tinh trước khi vẽ.</li></ul><ul lang="en"><li>96 unit tests run in the simulator; the core rules of the made-up system have golden cases with answers worked out by hand. Mutation testing: 77 mutants in the computations, 8 in the event code, 19 in the rule checker, each must be caught.</li><li>Always-on screenshots get their lit pixels counted before the face goes on the watch. Real measurement caught a wrong design: the first way of shifting the time (a small 8 px grid) still left 139 pixels lit for 4 minutes; redesigned as two bands further apart than the glyph height, measured again: 0.</li><li>The machines also caught the made-up system: twice the first parameter table failed the orbital stability rule (spacing to the neighbour under 10 Hill radii), so periods and planet sizes were changed before anything was drawn.</li></ul>
+  </section>
+</main>
+<footer>
+  <p><span lang="vi">Mã nguồn các sản phẩm nằm ở kho riêng tư.</span><span lang="en">Source code is kept in private repositories.</span></p>
+  <p><span lang="vi">Liên hệ</span><span lang="en">Contact</span>: <a href="https://www.facebook.com/Exomaly">Facebook</a> · <a href="https://zalo.me/0334934592">Zalo</a></p>
+  <p class="brand">Truong Dang Khoa — Exomaly</p>
+</footer>
+</body>
+</html>

@@ -430,6 +430,710 @@
           "The decision to split into two calls rests on a measurement, not a guess."
         ]
       }
+    },
+    {
+      "slug": "deck",
+      "name": "Exomaly Deck",
+      "note": {
+        "vi": "Sắp ra mắt.",
+        "en": "Coming soon."
+      },
+      "accent": "#ed4cc2",
+      "asof": "2026-11-19",
+      "tagline": {
+        "vi": "Bàn điều khiển âm thanh cho sự kiện, chạy hoàn toàn trong trình duyệt và không cần mạng.",
+        "en": "A sound console for live events that runs entirely in the browser and needs no network."
+      },
+      "summary": {
+        "vi": [
+          "Mỗi deck là một bài nhạc nền hoặc hiệu ứng, có fade in/fade out riêng; crossfade giữa các bài nhạc nền, phím tắt cho sân khấu, dò nhịp (BPM) và giọng (Tone).",
+          "Không máy chủ, không tài khoản, không gửi gì ra mạng: nhạc và cấu hình lưu trong trình duyệt của người dùng (IndexedDB). HTML, CSS, JavaScript thuần, không thư viện, không bước build; chép thư mục là chạy, kể cả khi hội trường mất mạng.",
+          "Thiết kế gốc bởi HoangPham; Exomaly tích hợp và chỉnh sửa."
+        ],
+        "en": [
+          "Each deck is a background track or a sound effect with its own fade in and fade out; crossfade between background tracks, stage hotkeys, tempo (BPM) and key (Tone) detection.",
+          "No server, no account, nothing is sent over the network: music and settings are stored in the user's own browser (IndexedDB). Plain HTML, CSS and JavaScript, no libraries, no build step; copy the folder and it runs, even when the venue has no network.",
+          "Originally designed by HoangPham; integrated and adapted by Exomaly."
+        ]
+      },
+      "stats": [
+        {
+          "v": "1005/1005",
+          "vi": "test Node đạt, không dùng thư viện ngoài",
+          "en": "Node tests passed, no external libraries"
+        },
+        {
+          "v": "298/298",
+          "vi": "lỗi cài cố ý vào lõi và giao diện bị test bắt",
+          "en": "deliberate faults planted in the core and the interface were caught by the tests"
+        },
+        {
+          "v": "359",
+          "vi": "ca vàng do người duyệt (fade, crossfade, Camelot, BPM, Tone, Web Audio, lưu trữ, độ to, phím, danh sách chương trình)",
+          "en": "golden cases approved by a person (fade, crossfade, Camelot, BPM, Tone, Web Audio, storage, loudness, hotkeys, cue list)"
+        },
+        {
+          "v": {
+            "vi": "4,1–4,5 s",
+            "en": "4.1–4.5 s"
+          },
+          "vi": "thời gian chạy cả bộ 1007 test (3 lần trên máy bàn, dao động theo tải máy)",
+          "en": "run time of the whole 1007-test suite (3 runs on the desktop, varies with load)"
+        },
+        {
+          "v": {
+            "vi": "29.868",
+            "en": "29,868"
+          },
+          "vi": "dòng code, gồm test (JavaScript, CSS, Python, HTML)",
+          "en": "lines of code, tests included (JavaScript, CSS, Python, HTML)"
+        },
+        {
+          "v": "7",
+          "vi": "quy tắc dự án, mỗi quy tắc có một kiểm tra tự động",
+          "en": "project rules, each with an automated check"
+        }
+      ],
+      "decisions": [
+        {
+          "what": {
+            "vi": "Web tĩnh một trang, mở bằng file://",
+            "en": "Static single page, opened with file://"
+          },
+          "why": {
+            "vi": "Chạy offline tuyệt đối, không phụ thuộc mạng hay tài khoản trong buổi diễn; hai file JS (lõi và giao diện), chép thư mục là chạy",
+            "en": "Fully offline, no dependence on a network or an account during a show; two JS files (core and interface); copy the folder and it runs"
+          },
+          "alt": {
+            "vi": "App desktop (Electron): nặng, cần cài đặt",
+            "en": "Desktop app (Electron): heavy, needs installing"
+          }
+        },
+        {
+          "what": {
+            "vi": "Script cổ điển, không ES module, không bước build",
+            "en": "Classic scripts, no ES modules, no build step"
+          },
+          "why": {
+            "vi": "file:// chặn nạp module từ file; không build thì không có gì để hỏng trước giờ diễn",
+            "en": "file:// blocks module loading from files; with no build there is nothing to break before showtime"
+          },
+          "alt": {
+            "vi": "ES module và bộ đóng gói",
+            "en": "ES modules and a bundler"
+          }
+        },
+        {
+          "what": {
+            "vi": "Phát bằng HTMLAudioElement, fade chạy bằng khung hình, tab ẩn thì chạy bằng bộ hẹn giờ",
+            "en": "Playback with HTMLAudioElement, fades driven by frames, by a timer when the tab is hidden"
+          },
+          "why": {
+            "vi": "Nhạc từ URL không hỗ trợ CORS vẫn phát được",
+            "en": "Music from URLs without CORS support still plays"
+          },
+          "alt": {
+            "vi": "Bỏ hẳn đường này: nguồn URL qua Web Audio thì câm",
+            "en": "Dropping this path entirely: URL sources go silent through Web Audio"
+          }
+        },
+        {
+          "what": {
+            "vi": "Đường phát Web Audio (một GainNode mỗi deck, chung một limiter, đồng hồ mức), bật theo khả năng trình duyệt (dò tính năng, không đọc tên trình duyệt)",
+            "en": "Web Audio output path (one GainNode per deck, one shared limiter, a level meter), turned on by browser capability (feature detection, no browser-name sniffing)"
+          },
+          "why": {
+            "vi": "Nhiều deck cùng phát vượt 0 dBFS thì vỡ tiếng; limiter giữ tổng dưới 0,976",
+            "en": "Several decks playing together go past 0 dBFS and clip; the limiter keeps the mix under 0.976"
+          },
+          "alt": {
+            "vi": "Limiter tự viết bằng AudioWorklet (không nạp được khi mở bằng file://); ngưỡng nén dưới 0 dB (tự nâng âm lượng mọi deck)",
+            "en": "A hand-written AudioWorklet limiter (cannot load when opened via file://); a compressor threshold below 0 dB (raises every deck's volume)"
+          }
+        },
+        {
+          "what": {
+            "vi": "Giữ nguyên tên cơ sở dữ liệu và khoá lưu của bản cũ",
+            "en": "Keep the old database name and storage keys"
+          },
+          "why": {
+            "vi": "Người dùng cũ nâng cấp không mất nhạc và cấu hình; có kiểm bằng trình duyệt thật",
+            "en": "Existing users upgrade without losing music or settings; checked in a real browser"
+          },
+          "alt": {
+            "vi": "Đổi tên theo thương hiệu mới (phải làm migration)",
+            "en": "Renaming to the new brand (would need a migration)"
+          }
+        }
+      ],
+      "verify": {
+        "vi": [
+          "1005 test Node (lệnh node --test \"tests/*.test.js\") và 298 lỗi cài cố ý, tất cả đều bị bắt; đáp án của luật lõi nằm trong 359 ca vàng do người duyệt, không lấy bằng cách chạy code.",
+          "So từng ca với bản trước khi tách lõi: 1001 ca cũ giống hệt, 1 ca đổi tên.",
+          "Trình duyệt thật (Chrome headless): kiểm nâng cấp người dùng cũ 32/32 ý, bố cục và thao tác 54/54 ý cả VI và EN, chính sách bảo mật nội dung (CSP) 11/11 ý.",
+          "Một lỗi thật mà ca vàng bắt được: bài nhịp mạnh ở 174 BPM bị dò thành 87 BPM, lỗi rộng hơn tên ca (11 trên 36 tempo quét); đã đo trước khi sửa, sửa bằng nội suy đỉnh rồi thêm 7 lỗi cài để canh."
+        ],
+        "en": [
+          "1005 Node tests (command node --test \"tests/*.test.js\") and 298 deliberate planted faults, all caught; the answers for core rules live in 359 golden cases approved by a person, never taken by running the code.",
+          "Case-by-case comparison with the version before the core split: 1001 old cases identical, 1 renamed.",
+          "Real browser (headless Chrome): existing-user upgrade check 32/32 points, layout and interaction 54/54 points in both VI and EN, content security policy (CSP) 11/11 points.",
+          "A real bug the golden cases caught: a strong-beat track at 174 BPM was detected as 87 BPM, wider than its test name (11 of 36 swept tempos); measured before fixing, fixed with peak interpolation, and 7 planted faults now guard it."
+        ]
+      }
+    },
+    {
+      "slug": "epochfold",
+      "name": "Exomaly Epochfold",
+      "note": {
+        "vi": "Chưa phát hành.",
+        "en": "Not released yet."
+      },
+      "accent": "#FF6633",
+      "asof": "2026-11-13",
+      "tagline": {
+        "vi": "Quay màn hình, cắt đoạn, zoom và xuất MP4 ngay trên máy bạn, video không rời khỏi máy.",
+        "en": "Records the screen, trims, zooms and exports MP4 right on your machine, the video never leaves your device."
+      },
+      "summary": {
+        "vi": [
+          "Quay màn hình, âm thanh hệ thống, mic và webcam; cắt đoạn, zoom; xuất MP4 tới 60 fps (dự kiến). Chạy trên trình duyệt và trên Windows.",
+          "Video không rời máy: mọi xử lý chạy trên máy người dùng. Không thống kê, không cookie.",
+          "Công nghệ: React 19, TypeScript, WebCodecs và mediabunny; bản Windows dùng Tauri 2. Một giao diện cho cả hai bản."
+        ],
+        "en": [
+          "Records the screen, system audio, mic and webcam; trims and zooms; exports MP4 at up to 60 fps (planned). Runs in the browser and on Windows.",
+          "Video never leaves the device: all processing runs on the user's machine. No analytics, no cookies.",
+          "Technology: React 19, TypeScript, WebCodecs and mediabunny; the Windows version uses Tauri 2. One UI for both versions."
+        ]
+      },
+      "stats": [
+        {
+          "v": "2529",
+          "vi": "test tự động (89 file) cho lõi quay, phiên quay, sửa, xuất, trình sửa, nhập video và trang giới thiệu",
+          "en": "automated tests (89 files) for the recording core, the session, editing, export, the editor, video import and the landing page"
+        },
+        {
+          "v": "1036/1036",
+          "vi": "lỗi cài cố ý bị test bắt ở lần chạy đủ gần nhất (12/11/2026); cả bộ hiện có 1087 lỗi",
+          "en": "planted mistakes caught by the tests in the last full run (2026-11-12); the full set now has 1087"
+        },
+        {
+          "v": "40/40",
+          "vi": "lỗi cài cố ý bị bộ kiểm quy tắc bắt",
+          "en": "planted mistakes caught by the rule checker"
+        },
+        {
+          "v": {
+            "vi": "26,1 giây",
+            "en": "26.1 s"
+          },
+          "vi": "thời gian chạy bộ kiểm lỗi cài cố ý của bộ kiểm quy tắc",
+          "en": "run time of the rule checker's planted-mistake check"
+        },
+        {
+          "v": {
+            "vi": "< 1 giây",
+            "en": "< 1 s"
+          },
+          "vi": "phần bản quay mất khi tab bị đóng đột ngột, đo thật trên Chrome và Edge với nguồn tổng hợp 1080p60 (đo 31/10/2026)",
+          "en": "of the recording lost when a tab is killed abruptly, measured for real on Chrome and Edge with a synthetic 1080p60 source (measured 2026-10-31)"
+        },
+        {
+          "v": "50.579",
+          "vi": "dòng code (TypeScript, JavaScript, TSX, Python, CSS, PowerShell, HTML)",
+          "en": "lines of code (TypeScript, JavaScript, TSX, Python, CSS, PowerShell, HTML)"
+        }
+      ],
+      "decisions": [
+        {
+          "what": {
+            "vi": "Web trước, desktop sau, một giao diện",
+            "en": "Web first, desktop later, one UI"
+          },
+          "why": {
+            "vi": "Một mã giao diện dùng chung; bản web ra sớm hơn",
+            "en": "One shared UI codebase; the web version can come out earlier"
+          },
+          "alt": {
+            "vi": "Làm desktop trước",
+            "en": "Building desktop first"
+          }
+        },
+        {
+          "what": {
+            "vi": "Bản desktop bằng Tauri 2 (WebView2)",
+            "en": "Desktop version on Tauri 2 (WebView2)"
+          },
+          "why": {
+            "vi": "Bộ cài nhỏ; codec H.264/AAC do WebView2 và Media Foundation của Microsoft cung cấp, không phải tự phát hành codec",
+            "en": "A small installer; the H.264/AAC codecs come from WebView2 and Microsoft's Media Foundation, so no codec has to be shipped"
+          },
+          "alt": {
+            "vi": "Electron (bộ cài lớn, phải phát hành Chromium kèm codec); app native C#/Qt (hai giao diện)",
+            "en": "Electron (big installer, Chromium with codecs would have to be shipped); a native C#/Qt app (two UIs)"
+          }
+        },
+        {
+          "what": {
+            "vi": "Lõi xử lý bằng WebCodecs + mediabunny",
+            "en": "Processing core on WebCodecs + mediabunny"
+          },
+          "why": {
+            "vi": "Mã hoá phần cứng, điều khiển được bitrate và khung đều; mediabunny dùng giấy phép MPL-2.0",
+            "en": "Hardware encoding, control over bitrate and constant frame pace; mediabunny is MPL-2.0 licensed"
+          },
+          "alt": {
+            "vi": "FFmpeg.wasm (chậm, x264 là GPL); MediaRecorder (ít quyền điều khiển); libobs (GPL-2)",
+            "en": "FFmpeg.wasm (slow, x264 is GPL); MediaRecorder (little control); libobs (GPL-2)"
+          }
+        },
+        {
+          "what": {
+            "vi": "Không gửi video lên máy chủ",
+            "en": "No video sent to a server"
+          },
+          "why": {
+            "vi": "Riêng tư, không tốn lưu trữ và băng thông, chính sách đơn giản",
+            "en": "Private, no storage or bandwidth cost, a simple policy"
+          },
+          "alt": {
+            "vi": "Render hay chia sẻ trên đám mây",
+            "en": "Cloud rendering or sharing"
+          }
+        },
+        {
+          "what": {
+            "vi": "React 19 + Vite + TypeScript",
+            "en": "React 19 + Vite + TypeScript"
+          },
+          "why": {
+            "vi": "Hệ sinh thái lớn nhất, dễ bảo trì; phần nặng chạy ở canvas và Web Worker nên kích thước React không đáng kể",
+            "en": "The largest ecosystem, easy to maintain; the heavy work runs in canvas and Web Workers, so React's size hardly matters"
+          },
+          "alt": {
+            "vi": "Svelte 5, Preact, SolidJS (nhẹ hơn nhưng hệ sinh thái nhỏ hơn)",
+            "en": "Svelte 5, Preact, SolidJS (lighter but a smaller ecosystem)"
+          }
+        }
+      ],
+      "verify": {
+        "vi": [
+          "2529 test tự động trong 89 file; lõi quay còn được thử bằng cài lỗi cố ý: 1036/1036 lỗi bị bắt ở lần chạy đủ gần nhất (12/11/2026).",
+          "Bộ kiểm quy tắc có 21 kiểm tra và tự được thử bằng 40 lỗi cài cố ý (gọi mạng sai chỗ, host lạ, thư viện GPL...): mỗi lỗi phải làm đúng một kiểm tra báo đỏ.",
+          "Khả năng của Chrome, Edge và WebView2 được đo trên một trang đo riêng trước khi viết lõi quay; phần bản quay mất khi tab bị đóng đột ngột dưới 1 giây (đo thật, 31/10/2026)."
+        ],
+        "en": [
+          "2529 automated tests in 89 files; the recording core is also tried with planted mistakes: 1036/1036 caught in the last full run (2026-11-12).",
+          "The rule checker has 21 checks and is itself tested with 40 planted mistakes (network call in the wrong file, unknown host, GPL library...): each must turn exactly one check red.",
+          "The capabilities of Chrome, Edge and WebView2 were measured on a separate probe page before the recording core was written; the recording lost when a tab is killed abruptly is under 1 second (measured for real, 2026-10-31)."
+        ]
+      }
+    },
+    {
+      "slug": "signal",
+      "name": "Exomaly Signal",
+      "note": {
+        "vi": "Tự thiết kế cho cá nhân, không phát hành.",
+        "en": "Self-designed for personal use, not released."
+      },
+      "accent": "#38BDF8",
+      "asof": "2026-11-17",
+      "tagline": {
+        "vi": "Bảng theo dõi nằm cạnh khung chat trong VS Code: việc đang chạy, lệnh nền, lượng ngữ cảnh đã dùng và các phiên làm việc khác trên máy.",
+        "en": "A monitoring pane beside the chat in VS Code: what is running, background commands, how much context has been used, and the other sessions on the machine."
+      },
+      "summary": {
+        "vi": [
+          "Bảng cho biết pha hiện tại (chờ, nghĩ, viết, chạy lệnh), danh sách lệnh của lượt và của phiên, lệnh nền, lượng ngữ cảnh đã dùng và tốc độ tăng mỗi lượt, các phiên khác trên máy và thời gian chạy test.",
+          "Dữ liệu không rời máy: mod không gọi mạng, chỉ đọc dữ liệu có sẵn trên máy và ghi một thẻ nhỏ cho mỗi phiên để các phiên thấy nhau.",
+          "Chỉ quan sát: mod không đổi quyết định quyền hay kết quả của bất kỳ lệnh nào. Một file TSX do engine mod của khung chat nạp thẳng; không npm, không bundler, không thư viện ngoài."
+        ],
+        "en": [
+          "The pane shows the current phase (waiting, thinking, writing, running a command), the commands of the turn and of the session, background commands, how much context has been used and how fast it grows per turn, the other sessions on the machine, and test timings.",
+          "Data never leaves the machine: the mod makes no network calls, only reads data already on the machine and writes one small card per session so sessions can see each other.",
+          "Observe only: the mod never changes a permission decision or the result of any command. One TSX file loaded directly by the chat's mod engine; no npm, no bundler, no third-party library."
+        ]
+      },
+      "stats": [
+        {
+          "v": "159/159",
+          "vi": "ca test hàm thuần và phần vẽ chạy qua engine thật",
+          "en": "tests of pure functions and of drawing through the real engine"
+        },
+        {
+          "v": "579/579",
+          "vi": "lỗi cài cố ý bị test bắt (510 vào hàm thuần, 69 vào phần vẽ)",
+          "en": "deliberate bugs caught by the tests (510 in pure functions, 69 in drawing)"
+        },
+        {
+          "v": "17",
+          "vi": "ca test cho công cụ dựng nhật ký theo ngày từ thẻ phiên cũ (thẻ hỏng, chạy hai lần, không đè file có sẵn)",
+          "en": "test cases for the tool that builds the daily log from old session cards (broken cards, running twice, never overwriting existing files)"
+        },
+        {
+          "v": "4",
+          "vi": "quy tắc dự án",
+          "en": "project rules"
+        },
+        {
+          "v": {
+            "vi": "5.860",
+            "en": "5,860"
+          },
+          "vi": "dòng code không trống (TSX 2317, TS 2143, Python 1400)",
+          "en": "non-empty lines of code (TSX 2317, TS 2143, Python 1400)"
+        },
+        {
+          "v": "7 + 13",
+          "vi": "mục tài liệu ARCHITECTURE + GUIDE, mỗi bản có tiếng Việt và tiếng Anh",
+          "en": "sections of ARCHITECTURE + GUIDE docs, each in Vietnamese and English"
+        }
+      ],
+      "decisions": [
+        {
+          "what": {
+            "vi": "Một file TSX, không npm, không bundler",
+            "en": "One TSX file, no npm, no bundler"
+          },
+          "why": {
+            "vi": "Engine nạp TSX trực tiếp; không có gì phải cài hay cập nhật",
+            "en": "The engine loads TSX directly; nothing to install or update"
+          },
+          "alt": {
+            "vi": "Nhiều module và bước build: thêm việc mà không thêm gì ở quy mô này",
+            "en": "Several modules and a build step: more work with no gain at this size"
+          }
+        },
+        {
+          "what": {
+            "vi": "Chỉ quan sát, không chạy lệnh từ mod",
+            "en": "Observe only, run no commands from the mod"
+          },
+          "why": {
+            "vi": "Mod chạy trong chính tiến trình của khung chat; không được làm đổi hay chậm việc đang làm",
+            "en": "The mod runs inside the chat's own process; it must not change or slow the work in progress"
+          },
+          "alt": {
+            "vi": "Chạy git từ mod để nhắc nhánh chờ push: tác giả không muốn mod chạy lệnh, và engine chỉ có cách đó ở bản dòng lệnh",
+            "en": "Running git from the mod to flag unpushed branches: the author does not want the mod running commands, and the engine offers that only in the command-line version"
+          }
+        },
+        {
+          "what": {
+            "vi": "Thẻ phiên trên đĩa để các phiên thấy nhau",
+            "en": "Session cards on disk so sessions see each other"
+          },
+          "why": {
+            "vi": "Mỗi cửa sổ có bản mod riêng; một thư mục thẻ là cách đơn giản nhất, không cần máy chủ",
+            "en": "Each window has its own copy of the mod; a card folder is the simplest way, with no server"
+          },
+          "alt": {
+            "vi": "Đọc lại bản ghi phiên để tính lượng ngữ cảnh cả ngày: engine không đọc file lớn hơn 4 MiB",
+            "en": "Re-reading session transcripts for the day's total: the engine does not read files over 4 MiB"
+          }
+        },
+        {
+          "what": {
+            "vi": "Hàm thuần tách khỏi phần vẽ",
+            "en": "Pure functions kept apart from drawing"
+          },
+          "why": {
+            "vi": "Phần tính test được nhanh, không cần dựng giao diện; phần vẽ có test riêng trên engine thật",
+            "en": "The computations test fast without building a UI; drawing has its own tests on the real engine"
+          },
+          "alt": {
+            "vi": "Chỉ xem ảnh chụp: đã có lần cả bảng trống mà test hàm thuần không bắt được",
+            "en": "Screenshots only: once the whole pane went blank and the pure-function tests could not catch it"
+          }
+        }
+      ],
+      "verify": {
+        "vi": [
+          "159 ca test chạy qua engine mod thật, gồm cả hàm thuần lẫn phần vẽ; kiểm kiểu báo 0 lỗi mới so với baseline.",
+          "Để chắc các test bắt được lỗi, 579 lỗi cài cố ý (510 vào hàm thuần, 69 vào phần vẽ) đều bị bắt; test nào không đỏ thì viết thêm ca.",
+          "Mỗi thay đổi giao diện được xem bằng ảnh chụp bảng thật trong VS Code, vì có lần cả bảng trống mà test hàm thuần không bắt được."
+        ],
+        "en": [
+          "159 tests run through the real mod engine, covering both pure functions and drawing; the type check reports 0 new errors against the baseline.",
+          "To make sure the tests catch real faults, 579 deliberate bugs (510 in pure functions, 69 in drawing) were all caught; any test that stays green gets a new case.",
+          "Every interface change is looked at in a screenshot of the real pane in VS Code, because once the whole pane went blank and the pure-function tests could not catch it."
+        ]
+      }
+    },
+    {
+      "slug": "orbit",
+      "name": "Exomaly Orbit",
+      "note": {
+        "vi": "Tự thiết kế cho cá nhân, không phát hành.",
+        "en": "Self-designed for personal use, not released."
+      },
+      "accent": "#FFF44F",
+      "asof": "2026-11-07",
+      "tagline": {
+        "vi": "Ứng dụng ở khay hệ thống Windows, chỉ đọc, theo dõi nhánh git, commit chờ push và tiến trình nặng trên một máy, báo qua thông báo Windows và bảng điều khiển 3D.",
+        "en": "A read-only Windows system-tray app that watches git branches, commits waiting to be pushed and heavy processes on one machine, and reports through Windows notifications and a 3D dashboard."
+      },
+      "summary": {
+        "vi": [
+          "Quét các repo git trên máy (nhánh, worktree, commit chờ push, commit chưa gộp), các phiên làm việc đang mở và tiến trình nặng; báo bằng thông báo Windows, cửa sổ bảng điều khiển 3D hai thứ tiếng và một lệnh in trạng thái một dòng.",
+          "Chỉ đọc và chạy hoàn toàn trên máy: app không push, không fetch, không xoá nhánh, không dừng tiến trình, không mở kết nối mạng.",
+          "Electron, JavaScript thuần có chú thích kiểu (JSDoc), Three.js và trình test có sẵn của Node; mọi quy tắc của dự án đều có một kiểm tra tự động."
+        ],
+        "en": [
+          "Scans the git repositories on the machine (branches, worktrees, commits waiting to be pushed, unmerged commits), the open work sessions and heavy processes; reports through Windows notifications, a bilingual 3D dashboard window and a one-line status command.",
+          "Read-only and fully local: the app never pushes, fetches, deletes branches or stops processes, and opens no network connection.",
+          "Electron, plain JavaScript with type annotations (JSDoc), Three.js and Node's built-in test runner; every project rule has an automated check."
+        ]
+      },
+      "stats": [
+        {
+          "v": "954/954",
+          "vi": "test tự động của lõi quét, app khay, cửa sổ 3D và hai thứ tiếng, khoảng 15 giây lúc rảnh và tới 3,5 phút khi máy rất bận",
+          "en": "automated tests of the scanning core, tray app, 3D window and both languages, about 15 seconds idle and up to 3.5 minutes under heavy load"
+        },
+        {
+          "v": "95/95",
+          "vi": "lỗi cài cố ý vào cửa sổ 3D đều bị bắt: 87 vào code hiển thị, luật bảo mật và ngôn ngữ, 8 vào trang khi chụp ảnh kiểm",
+          "en": "deliberate bugs planted in the 3D window, all caught: 87 in the display code, security rules and language handling, 8 in the page during the screenshot check"
+        },
+        {
+          "v": "56/56",
+          "vi": "lỗi cài cố ý vào luật cảnh báo đều bị 119 ca do tác giả duyệt, test trích dẫn tên nhánh và test câu hai thứ tiếng bắt được",
+          "en": "deliberate bugs planted in the alert rules, all caught by the 119 author-approved cases, the branch-name quoting test and the two-language sentence test"
+        },
+        {
+          "v": "36/36",
+          "vi": "lỗi cài cố ý vào phần tự chạy khi đăng nhập đều bị bắt, kể cả lệnh xoá shortcut thừa",
+          "en": "bugs deliberately planted in the start-at-sign-in code, all caught, including the command that deletes a stray shortcut"
+        },
+        {
+          "v": "7/7",
+          "vi": "ca thử tốc độ lệnh một dòng đúng mong đợi: 6 lỗi làm chậm bị bắt, 1 ca đối chứng vẫn xanh",
+          "en": "speed checks of the one-line command behaved as expected: 6 slowdowns caught, 1 control case stayed green"
+        },
+        {
+          "v": "21309",
+          "vi": "dòng code (JavaScript, Python, PowerShell, HTML, CSS): lõi quét, app khay, cửa sổ 3D, lệnh một dòng, test và bộ kiểm quy tắc",
+          "en": "lines of code (JavaScript, Python, PowerShell, HTML, CSS): scanning core, tray app, 3D window, one-line command, tests and the rule checker"
+        }
+      ],
+      "decisions": [
+        {
+          "what": {
+            "vi": "Một file trạng thái chung cho cả ba lối vào (khay, cửa sổ 3D, lệnh một dòng)",
+            "en": "One shared status file for all three entry points (tray, 3D window, one-line command)"
+          },
+          "why": {
+            "vi": "Lệnh một dòng chạy ở mọi lượt nên phải nhanh; cửa sổ không cần quyền hệ thống",
+            "en": "The one-line command runs every turn, so it must be fast; the window needs no system access"
+          },
+          "alt": {
+            "vi": "Lệnh tự chạy git mỗi lần (chậm 1–2 giây); máy chủ cục bộ (trái quy tắc không mạng)",
+            "en": "Command running git every time (1–2 seconds); local server (breaks the no-network rule)"
+          }
+        },
+        {
+          "what": {
+            "vi": "Lõi quét không phụ thuộc Electron",
+            "en": "Scanning core independent of Electron"
+          },
+          "why": {
+            "vi": "Test được bằng Node thuần, trên máy nào cũng chạy",
+            "en": "Testable with plain Node, on any machine"
+          },
+          "alt": {
+            "vi": "Viết thẳng trong tiến trình Electron (khó test)",
+            "en": "Writing it straight into the Electron process (hard to test)"
+          }
+        },
+        {
+          "what": {
+            "vi": "Không tự fetch",
+            "en": "No automatic fetch"
+          },
+          "why": {
+            "vi": "Fetch ghi vào repo và cần mạng; app hiện tuổi của lần fetch gần nhất",
+            "en": "Fetching writes to the repository and needs the network; the app shows the age of the last fetch"
+          },
+          "alt": {
+            "vi": "Fetch định kỳ",
+            "en": "Periodic fetch"
+          }
+        },
+        {
+          "what": {
+            "vi": "Lệnh git chạy không giành khoá",
+            "en": "Git commands run without taking locks"
+          },
+          "why": {
+            "vi": "Không tranh khoá với phiên làm việc đang commit",
+            "en": "No lock contention with a work session that is committing"
+          },
+          "alt": {
+            "vi": "Gọi git bình thường",
+            "en": "Calling git normally"
+          }
+        }
+      ],
+      "verify": {
+        "vi": [
+          "954 test tự động phủ lõi quét, app khay, cửa sổ 3D và hai thứ tiếng; chạy khoảng 15 giây lúc máy rảnh.",
+          "Mỗi bộ kiểm có lỗi cài cố ý phải bị bắt: 56 lỗi vào luật cảnh báo, 95 vào cửa sổ 3D, 36 vào phần tự chạy khi đăng nhập, 7 ca thử tốc độ lệnh một dòng.",
+          "Luật cảnh báo có 119 ca do tác giả duyệt; cửa sổ 3D được chụp ảnh ở ba chế độ trong Chrome headless để so với ảnh chuẩn.",
+          "Ứng dụng chạy trên máy, không có trang web để kiểm."
+        ],
+        "en": [
+          "954 automated tests cover the scanning core, the tray app, the 3D window and both languages; about 15 seconds on an idle machine.",
+          "Each check has deliberately planted bugs it must catch: 56 in the alert rules, 95 in the 3D window, 36 in the start-at-sign-in code, 7 speed checks of the one-line command.",
+          "The alert rules have 119 author-approved cases; the 3D window is screenshotted in three modes in headless Chrome and compared with reference images.",
+          "The app runs locally; there is no website to check."
+        ]
+      }
+    },
+    {
+      "slug": "ephemeris",
+      "name": "Exomaly Ephemeris",
+      "note": {
+        "vi": "Tự thiết kế cho cá nhân, không phát hành.",
+        "en": "Self-designed for personal use, not released."
+      },
+      "accent": "#62F3F4",
+      "asof": "2026-11-20",
+      "tagline": {
+        "vi": "Mặt đồng hồ Garmin Forerunner 165 viết bằng Monkey C: một hệ hành tinh tự tạo quay đúng chu kỳ trên nền đen AMOLED.",
+        "en": "A Garmin Forerunner 165 watch face written in Monkey C: a made-up planetary system turning at its true periods on AMOLED black."
+      },
+      "summary": {
+        "vi": [
+          "Mặt orrery trên nền đen AMOLED: giờ, ngày, pin; nửa trên là bầu trời thật, nửa dưới là hệ hành tinh giả định (sao K2V và 8 hành tinh, mỗi hành tinh một sản phẩm Exomaly) quay đúng chu kỳ, kèm đường cong ánh sáng, nhịp tim, bước chân và dấu \"đang đi qua\" khi một hành tinh qua đĩa sao.",
+          "Chạy hoàn toàn trên đồng hồ: không mạng, không quyền Communications, không lưu gì.",
+          "Màn hình luôn bật chỉ hiện giờ:phút màu xám, dịch vị trí mỗi phút, ngân sách 8% điểm ảnh sáng để chống lưu ảnh trên AMOLED. Công nghệ: Monkey C và Connect IQ SDK 9.3.0; công cụ build và test bằng Python thư viện chuẩn."
+        ],
+        "en": [
+          "An orrery face on AMOLED black: time, date, battery; the real sky in the upper half, a made-up planetary system below (a K2V star and 8 planets, one per Exomaly product) turning at their true periods, with a light curve, heart rate, steps and a \"transiting now\" mark when a planet crosses the star.",
+          "Runs entirely on the watch: no network, no Communications permission, nothing stored.",
+          "The always-on display shows only grey hour:minute, shifted every minute, with an 8% lit-pixel budget against AMOLED burn-in. Technology: Monkey C and Connect IQ SDK 9.3.0; build and test tools in standard-library Python."
+        ]
+      },
+      "stats": [
+        {
+          "v": "96/96",
+          "vi": "unit test chạy trong simulator, gồm 23 ca vàng của hệ tự tạo và 8 ca vàng cùng 6 ca chữ của sự kiện hệ Exomaly",
+          "en": "unit tests run in the simulator, including 23 golden cases of the made-up system and 8 golden cases plus 6 text cases of the system event"
+        },
+        {
+          "v": "77/77",
+          "vi": "lỗi cài vào phần tính toán đều làm unit test đỏ",
+          "en": "mutants planted in the computations all turned the unit tests red"
+        },
+        {
+          "v": "8/8",
+          "vi": "lỗi cài vào mã sự kiện đều bị bắt",
+          "en": "mutants planted in the event code all caught"
+        },
+        {
+          "v": "36/36",
+          "vi": "luật tự kiểm của hệ hành tinh tự tạo",
+          "en": "self-check rules of the made-up planetary system"
+        },
+        {
+          "v": {
+            "vi": "3,2%",
+            "en": "3.2%"
+          },
+          "vi": "điểm ảnh sáng cao nhất ở chế độ màn hình luôn bật, đo trên 4 phút simulator (ngân sách tự đặt 8%, Garmin dưới 10%); 0 điểm sáng liền 4 phút",
+          "en": "peak lit pixels in always-on mode, measured over 4 simulator minutes (own budget 8%, Garmin under 10%); 0 pixels lit 4 minutes in a row"
+        },
+        {
+          "v": "0",
+          "vi": "điểm ảnh lệch khi so ảnh trước và sau lần dọn code",
+          "en": "pixels differ in the before/after image comparison of a code clean-up"
+        }
+      ],
+      "decisions": [
+        {
+          "what": {
+            "vi": "Vẽ tay trong onUpdate",
+            "en": "Hand drawing in onUpdate"
+          },
+          "why": {
+            "vi": "Kiểm soát từng điểm ảnh ở chế độ màn hình luôn bật; vẽ được đường nhịp tim",
+            "en": "Pixel-level control in always-on mode; can draw the heart-rate curve"
+          },
+          "alt": {
+            "vi": "Layout XML: khó kiểm soát điểm ảnh sáng",
+            "en": "XML layouts: hard to control lit pixels"
+          }
+        },
+        {
+          "what": {
+            "vi": "Hàm tính toán tách khỏi phần vẽ",
+            "en": "Computations kept apart from drawing"
+          },
+          "why": {
+            "vi": "Kiểm được bằng unit test và cài lỗi",
+            "en": "Checkable by unit tests and mutation testing"
+          },
+          "alt": {
+            "vi": "Tính ngay trong hàm vẽ: chỉ kiểm được bằng mắt",
+            "en": "Computing inside draw code: checkable only by eye"
+          }
+        },
+        {
+          "what": {
+            "vi": "Hệ hành tinh tự tạo, có kiểm vật lý",
+            "en": "Made-up planetary system with physics checks"
+          },
+          "why": {
+            "vi": "Exomaly không phải Hệ Mặt Trời; một hệ giả định tự kiểm luật Kepler, ổn định Hill, vùng sống được",
+            "en": "Exomaly is not the Solar System; a made-up system self-checks Kepler, Hill stability and the habitable zone"
+          },
+          "alt": {
+            "vi": "Hệ Mặt Trời thật; hệ ngoại hành tinh thật (không đặt hệ giả định vào sao thật)",
+            "en": "The real Solar System; a real exoplanet system (no made-up system on a real star)"
+          }
+        },
+        {
+          "what": {
+            "vi": "Quỹ đạo tròn, một phép chia lấy dư",
+            "en": "Circular orbits, one remainder operation"
+          },
+          "why": {
+            "vi": "Vị trí hôm nay tính rẻ trên đồng hồ, tua mượt",
+            "en": "The position for today is cheap on the watch, rewind is smooth"
+          },
+          "alt": {
+            "vi": "Giải phương trình Kepler mỗi lần vẽ",
+            "en": "Solving the Kepler equation at every draw"
+          }
+        },
+        {
+          "what": {
+            "vi": "Tự viết mặt đồng hồ",
+            "en": "Own watch face"
+          },
+          "why": {
+            "vi": "Đúng ý, học được, không vướng giấy phép",
+            "en": "Exactly as wanted, a learning project, no licence issues"
+          },
+          "alt": {
+            "vi": "Garmin Face It, chép mặt đồng hồ mã nguồn mở",
+            "en": "Garmin Face It, copying an open-source face"
+          }
+        }
+      ],
+      "verify": {
+        "vi": [
+          "96 unit test chạy trong simulator; luật lõi của hệ tự tạo có ca vàng với đáp án tính tay. Cài lỗi: 77 lỗi vào phần tính toán, 8 lỗi vào mã sự kiện, 19 lỗi vào bộ kiểm quy tắc, mỗi lỗi phải bị bắt.",
+          "Ảnh chụp chế độ màn hình luôn bật được đếm điểm ảnh sáng trước khi cài lên đồng hồ. Đo thật bắt được một thiết kế sai: cách dịch giờ đầu tiên (lưới nhỏ 8 px) vẫn để 139 điểm ảnh sáng suốt 4 phút; thiết kế lại thành hai dải cách nhau hơn chiều cao chữ, đo lại còn 0.",
+          "Máy kiểm bắt cả hệ hành tinh giả định: hai lần đầu bảng thông số trượt luật ổn định quỹ đạo (khoảng cách tới hàng xóm dưới 10 bán kính Hill), nên phải đổi chu kỳ và cỡ hành tinh trước khi vẽ."
+        ],
+        "en": [
+          "96 unit tests run in the simulator; the core rules of the made-up system have golden cases with answers worked out by hand. Mutation testing: 77 mutants in the computations, 8 in the event code, 19 in the rule checker, each must be caught.",
+          "Always-on screenshots get their lit pixels counted before the face goes on the watch. Real measurement caught a wrong design: the first way of shifting the time (a small 8 px grid) still left 139 pixels lit for 4 minutes; redesigned as two bands further apart than the glyph height, measured again: 0.",
+          "The machines also caught the made-up system: twice the first parameter table failed the orbital stability rule (spacing to the neighbour under 10 Hill radii), so periods and planet sizes were changed before anything was drawn."
+        ]
+      }
     }
   ]
 }

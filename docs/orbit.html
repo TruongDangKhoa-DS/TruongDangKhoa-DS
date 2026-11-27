@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exomaly Orbit · Cách làm</title>
+<meta name="description" content="Ứng dụng ở khay hệ thống Windows, chỉ đọc, theo dõi nhánh git, commit chờ push và tiến trình nặng trên một máy, báo qua thông báo Windows và bảng điều khiển 3D.">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body style="--accent: #FFF44F">
+<header class="top">
+  <a class="back" href="index.html"><span lang="vi">← Tất cả sản phẩm</span><span lang="en">← All products</span></a>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-set-lang="vi">VI</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
+</header>
+<main>
+  <p class="eyebrow"><span lang="vi">Cách sản phẩm này được làm</span><span lang="en">How this product is built</span></p>
+  <h1>Exomaly Orbit</h1>
+  <p class="tagline"><span lang="vi">Ứng dụng ở khay hệ thống Windows, chỉ đọc, theo dõi nhánh git, commit chờ push và tiến trình nặng trên một máy, báo qua thông báo Windows và bảng điều khiển 3D.</span><span lang="en">A read-only Windows system-tray app that watches git branches, commits waiting to be pushed and heavy processes on one machine, and reports through Windows notifications and a 3D dashboard.</span></p>
+  <p class="tagline"><span lang="vi">Tự thiết kế cho cá nhân, không phát hành.</span><span lang="en">Self-designed for personal use, not released.</span></p>
+
+  <section>
+    <h2><span class="n">1</span><span lang="vi">Tóm tắt</span><span lang="en">Summary</span></h2>
+    <ul lang="vi"><li>Quét các repo git trên máy (nhánh, worktree, commit chờ push, commit chưa gộp), các phiên làm việc đang mở và tiến trình nặng; báo bằng thông báo Windows, cửa sổ bảng điều khiển 3D hai thứ tiếng và một lệnh in trạng thái một dòng.</li><li>Chỉ đọc và chạy hoàn toàn trên máy: app không push, không fetch, không xoá nhánh, không dừng tiến trình, không mở kết nối mạng.</li><li>Electron, JavaScript thuần có chú thích kiểu (JSDoc), Three.js và trình test có sẵn của Node; mọi quy tắc của dự án đều có một kiểm tra tự động.</li></ul><ul lang="en"><li>Scans the git repositories on the machine (branches, worktrees, commits waiting to be pushed, unmerged commits), the open work sessions and heavy processes; reports through Windows notifications, a bilingual 3D dashboard window and a one-line status command.</li><li>Read-only and fully local: the app never pushes, fetches, deletes branches or stops processes, and opens no network connection.</li><li>Electron, plain JavaScript with type annotations (JSDoc), Three.js and Node&#x27;s built-in test runner; every project rule has an automated check.</li></ul>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span lang="vi">Số liệu</span><span lang="en">By the numbers</span></h2>
+    <div class="stats"><div class="stat"><div class="v"><span lang="vi">954/954</span><span lang="en">954/954</span></div><div class="k"><span lang="vi">test tự động của lõi quét, app khay, cửa sổ 3D và hai thứ tiếng, khoảng 15 giây lúc rảnh và tới 3,5 phút khi máy rất bận</span><span lang="en">automated tests of the scanning core, tray app, 3D window and both languages, about 15 seconds idle and up to 3.5 minutes under heavy load</span></div></div><div class="stat"><div class="v"><span lang="vi">95/95</span><span lang="en">95/95</span></div><div class="k"><span lang="vi">lỗi cài cố ý vào cửa sổ 3D đều bị bắt: 87 vào code hiển thị, luật bảo mật và ngôn ngữ, 8 vào trang khi chụp ảnh kiểm</span><span lang="en">deliberate bugs planted in the 3D window, all caught: 87 in the display code, security rules and language handling, 8 in the page during the screenshot check</span></div></div><div class="stat"><div class="v"><span lang="vi">56/56</span><span lang="en">56/56</span></div><div class="k"><span lang="vi">lỗi cài cố ý vào luật cảnh báo đều bị 119 ca do tác giả duyệt, test trích dẫn tên nhánh và test câu hai thứ tiếng bắt được</span><span lang="en">deliberate bugs planted in the alert rules, all caught by the 119 author-approved cases, the branch-name quoting test and the two-language sentence test</span></div></div><div class="stat"><div class="v"><span lang="vi">36/36</span><span lang="en">36/36</span></div><div class="k"><span lang="vi">lỗi cài cố ý vào phần tự chạy khi đăng nhập đều bị bắt, kể cả lệnh xoá shortcut thừa</span><span lang="en">bugs deliberately planted in the start-at-sign-in code, all caught, including the command that deletes a stray shortcut</span></div></div><div class="stat"><div class="v"><span lang="vi">7/7</span><span lang="en">7/7</span></div><div class="k"><span lang="vi">ca thử tốc độ lệnh một dòng đúng mong đợi: 6 lỗi làm chậm bị bắt, 1 ca đối chứng vẫn xanh</span><span lang="en">speed checks of the one-line command behaved as expected: 6 slowdowns caught, 1 control case stayed green</span></div></div><div class="stat"><div class="v"><span lang="vi">21309</span><span lang="en">21309</span></div><div class="k"><span lang="vi">dòng code (JavaScript, Python, PowerShell, HTML, CSS): lõi quét, app khay, cửa sổ 3D, lệnh một dòng, test và bộ kiểm quy tắc</span><span lang="en">lines of code (JavaScript, Python, PowerShell, HTML, CSS): scanning core, tray app, 3D window, one-line command, tests and the rule checker</span></div></div></div>
+    <p class="asof"><span lang="vi">Số liệu lấy từ các lần chạy thật, tính đến 2026-11-07.</span><span lang="en">Figures come from real runs, as of 2026-11-07.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span><span lang="vi">Quyết định thiết kế</span><span lang="en">Design decisions</span></h2>
+    <article class="dec"><h3><span lang="vi">Một file trạng thái chung cho cả ba lối vào (khay, cửa sổ 3D, lệnh một dòng)</span><span lang="en">One shared status file for all three entry points (tray, 3D window, one-line command)</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Lệnh một dòng chạy ở mọi lượt nên phải nhanh; cửa sổ không cần quyền hệ thống</span><span lang="en">The one-line command runs every turn, so it must be fast; the window needs no system access</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Lệnh tự chạy git mỗi lần (chậm 1–2 giây); máy chủ cục bộ (trái quy tắc không mạng)</span><span lang="en">Command running git every time (1–2 seconds); local server (breaks the no-network rule)</span></dd></dl></article><article class="dec"><h3><span lang="vi">Lõi quét không phụ thuộc Electron</span><span lang="en">Scanning core independent of Electron</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Test được bằng Node thuần, trên máy nào cũng chạy</span><span lang="en">Testable with plain Node, on any machine</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Viết thẳng trong tiến trình Electron (khó test)</span><span lang="en">Writing it straight into the Electron process (hard to test)</span></dd></dl></article><article class="dec"><h3><span lang="vi">Không tự fetch</span><span lang="en">No automatic fetch</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Fetch ghi vào repo và cần mạng; app hiện tuổi của lần fetch gần nhất</span><span lang="en">Fetching writes to the repository and needs the network; the app shows the age of the last fetch</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Fetch định kỳ</span><span lang="en">Periodic fetch</span></dd></dl></article><article class="dec"><h3><span lang="vi">Lệnh git chạy không giành khoá</span><span lang="en">Git commands run without taking locks</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Không tranh khoá với phiên làm việc đang commit</span><span lang="en">No lock contention with a work session that is committing</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Gọi git bình thường</span><span lang="en">Calling git normally</span></dd></dl></article>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span><span lang="vi">Cách kiểm chứng</span><span lang="en">How it is verified</span></h2>
+    <ul lang="vi"><li>954 test tự động phủ lõi quét, app khay, cửa sổ 3D và hai thứ tiếng; chạy khoảng 15 giây lúc máy rảnh.</li><li>Mỗi bộ kiểm có lỗi cài cố ý phải bị bắt: 56 lỗi vào luật cảnh báo, 95 vào cửa sổ 3D, 36 vào phần tự chạy khi đăng nhập, 7 ca thử tốc độ lệnh một dòng.</li><li>Luật cảnh báo có 119 ca do tác giả duyệt; cửa sổ 3D được chụp ảnh ở ba chế độ trong Chrome headless để so với ảnh chuẩn.</li><li>Ứng dụng chạy trên máy, không có trang web để kiểm.</li></ul><ul lang="en"><li>954 automated tests cover the scanning core, the tray app, the 3D window and both languages; about 15 seconds on an idle machine.</li><li>Each check has deliberately planted bugs it must catch: 56 in the alert rules, 95 in the 3D window, 36 in the start-at-sign-in code, 7 speed checks of the one-line command.</li><li>The alert rules have 119 author-approved cases; the 3D window is screenshotted in three modes in headless Chrome and compared with reference images.</li><li>The app runs locally; there is no website to check.</li></ul>
+  </section>
+</main>
+<footer>
+  <p><span lang="vi">Mã nguồn các sản phẩm nằm ở kho riêng tư.</span><span lang="en">Source code is kept in private repositories.</span></p>
+  <p><span lang="vi">Liên hệ</span><span lang="en">Contact</span>: <a href="https://www.facebook.com/Exomaly">Facebook</a> · <a href="https://zalo.me/0334934592">Zalo</a></p>
+  <p class="brand">Truong Dang Khoa — Exomaly</p>
+</footer>
+</body>
+</html>

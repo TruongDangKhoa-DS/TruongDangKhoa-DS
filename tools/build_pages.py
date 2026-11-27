@@ -113,6 +113,17 @@ def render_decisions(decisions: list[dict[str, Text | dict[str, str]]]) -> str:
     return "".join(cards)
 
 
+def render_access(product: dict[str, Any]) -> str:
+    """Open-the-product button when the product has an address, else its status note (not released, personal use...)."""
+    url = product.get("url")
+    if url:
+        return f'<p><a class="cta" href="{esc(url)}">{both("Mở sản phẩm", "Open the product")} →</a></p>'
+    note = product.get("note")
+    if note:
+        return f'<p class="tagline">{both_text(note)}</p>'
+    return ""
+
+
 def render_product(product: dict[str, Any]) -> str:
     """Full page of one product."""
     name = str(product["name"])
@@ -121,7 +132,7 @@ def render_product(product: dict[str, Any]) -> str:
   <p class="eyebrow">{both("Cách sản phẩm này được làm", "How this product is built")}</p>
   <h1>{esc(name)}</h1>
   <p class="tagline">{both_text(product["tagline"])}</p>
-  <p><a class="cta" href="{esc(product["url"])}">{both("Mở sản phẩm", "Open the product")} →</a></p>
+  {render_access(product)}
 
   <section>
     <h2><span class="n">1</span>{both("Tóm tắt", "Summary")}</h2>

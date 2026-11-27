@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exomaly Epochfold · Cách làm</title>
+<meta name="description" content="Quay màn hình, cắt đoạn, zoom và xuất MP4 ngay trên máy bạn, video không rời khỏi máy.">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body style="--accent: #FF6633">
+<header class="top">
+  <a class="back" href="index.html"><span lang="vi">← Tất cả sản phẩm</span><span lang="en">← All products</span></a>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-set-lang="vi">VI</button>
+    <button type="button" data-set-lang="en">EN</button>
+  </div>
+</header>
+<main>
+  <p class="eyebrow"><span lang="vi">Cách sản phẩm này được làm</span><span lang="en">How this product is built</span></p>
+  <h1>Exomaly Epochfold</h1>
+  <p class="tagline"><span lang="vi">Quay màn hình, cắt đoạn, zoom và xuất MP4 ngay trên máy bạn, video không rời khỏi máy.</span><span lang="en">Records the screen, trims, zooms and exports MP4 right on your machine, the video never leaves your device.</span></p>
+  <p class="tagline"><span lang="vi">Chưa phát hành.</span><span lang="en">Not released yet.</span></p>
+
+  <section>
+    <h2><span class="n">1</span><span lang="vi">Tóm tắt</span><span lang="en">Summary</span></h2>
+    <ul lang="vi"><li>Quay màn hình, âm thanh hệ thống, mic và webcam; cắt đoạn, zoom; xuất MP4 tới 60 fps (dự kiến). Chạy trên trình duyệt và trên Windows.</li><li>Video không rời máy: mọi xử lý chạy trên máy người dùng. Không thống kê, không cookie.</li><li>Công nghệ: React 19, TypeScript, WebCodecs và mediabunny; bản Windows dùng Tauri 2. Một giao diện cho cả hai bản.</li></ul><ul lang="en"><li>Records the screen, system audio, mic and webcam; trims and zooms; exports MP4 at up to 60 fps (planned). Runs in the browser and on Windows.</li><li>Video never leaves the device: all processing runs on the user&#x27;s machine. No analytics, no cookies.</li><li>Technology: React 19, TypeScript, WebCodecs and mediabunny; the Windows version uses Tauri 2. One UI for both versions.</li></ul>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span lang="vi">Số liệu</span><span lang="en">By the numbers</span></h2>
+    <div class="stats"><div class="stat"><div class="v"><span lang="vi">2529</span><span lang="en">2529</span></div><div class="k"><span lang="vi">test tự động (89 file) cho lõi quay, phiên quay, sửa, xuất, trình sửa, nhập video và trang giới thiệu</span><span lang="en">automated tests (89 files) for the recording core, the session, editing, export, the editor, video import and the landing page</span></div></div><div class="stat"><div class="v"><span lang="vi">1036/1036</span><span lang="en">1036/1036</span></div><div class="k"><span lang="vi">lỗi cài cố ý bị test bắt ở lần chạy đủ gần nhất (12/11/2026); cả bộ hiện có 1087 lỗi</span><span lang="en">planted mistakes caught by the tests in the last full run (2026-11-12); the full set now has 1087</span></div></div><div class="stat"><div class="v"><span lang="vi">40/40</span><span lang="en">40/40</span></div><div class="k"><span lang="vi">lỗi cài cố ý bị bộ kiểm quy tắc bắt</span><span lang="en">planted mistakes caught by the rule checker</span></div></div><div class="stat"><div class="v"><span lang="vi">26,1 giây</span><span lang="en">26.1 s</span></div><div class="k"><span lang="vi">thời gian chạy bộ kiểm lỗi cài cố ý của bộ kiểm quy tắc</span><span lang="en">run time of the rule checker&#x27;s planted-mistake check</span></div></div><div class="stat"><div class="v"><span lang="vi">&lt; 1 giây</span><span lang="en">&lt; 1 s</span></div><div class="k"><span lang="vi">phần bản quay mất khi tab bị đóng đột ngột, đo thật trên Chrome và Edge với nguồn tổng hợp 1080p60 (đo 31/10/2026)</span><span lang="en">of the recording lost when a tab is killed abruptly, measured for real on Chrome and Edge with a synthetic 1080p60 source (measured 2026-10-31)</span></div></div><div class="stat"><div class="v"><span lang="vi">50.579</span><span lang="en">50.579</span></div><div class="k"><span lang="vi">dòng code (TypeScript, JavaScript, TSX, Python, CSS, PowerShell, HTML)</span><span lang="en">lines of code (TypeScript, JavaScript, TSX, Python, CSS, PowerShell, HTML)</span></div></div></div>
+    <p class="asof"><span lang="vi">Số liệu lấy từ các lần chạy thật, tính đến 2026-11-13.</span><span lang="en">Figures come from real runs, as of 2026-11-13.</span></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span><span lang="vi">Quyết định thiết kế</span><span lang="en">Design decisions</span></h2>
+    <article class="dec"><h3><span lang="vi">Web trước, desktop sau, một giao diện</span><span lang="en">Web first, desktop later, one UI</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Một mã giao diện dùng chung; bản web ra sớm hơn</span><span lang="en">One shared UI codebase; the web version can come out earlier</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Làm desktop trước</span><span lang="en">Building desktop first</span></dd></dl></article><article class="dec"><h3><span lang="vi">Bản desktop bằng Tauri 2 (WebView2)</span><span lang="en">Desktop version on Tauri 2 (WebView2)</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Bộ cài nhỏ; codec H.264/AAC do WebView2 và Media Foundation của Microsoft cung cấp, không phải tự phát hành codec</span><span lang="en">A small installer; the H.264/AAC codecs come from WebView2 and Microsoft&#x27;s Media Foundation, so no codec has to be shipped</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Electron (bộ cài lớn, phải phát hành Chromium kèm codec); app native C#/Qt (hai giao diện)</span><span lang="en">Electron (big installer, Chromium with codecs would have to be shipped); a native C#/Qt app (two UIs)</span></dd></dl></article><article class="dec"><h3><span lang="vi">Lõi xử lý bằng WebCodecs + mediabunny</span><span lang="en">Processing core on WebCodecs + mediabunny</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Mã hoá phần cứng, điều khiển được bitrate và khung đều; mediabunny dùng giấy phép MPL-2.0</span><span lang="en">Hardware encoding, control over bitrate and constant frame pace; mediabunny is MPL-2.0 licensed</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">FFmpeg.wasm (chậm, x264 là GPL); MediaRecorder (ít quyền điều khiển); libobs (GPL-2)</span><span lang="en">FFmpeg.wasm (slow, x264 is GPL); MediaRecorder (little control); libobs (GPL-2)</span></dd></dl></article><article class="dec"><h3><span lang="vi">Không gửi video lên máy chủ</span><span lang="en">No video sent to a server</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Riêng tư, không tốn lưu trữ và băng thông, chính sách đơn giản</span><span lang="en">Private, no storage or bandwidth cost, a simple policy</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Render hay chia sẻ trên đám mây</span><span lang="en">Cloud rendering or sharing</span></dd></dl></article><article class="dec"><h3><span lang="vi">React 19 + Vite + TypeScript</span><span lang="en">React 19 + Vite + TypeScript</span></h3><dl><dt><span lang="vi">Vì sao</span><span lang="en">Why</span></dt><dd><span lang="vi">Hệ sinh thái lớn nhất, dễ bảo trì; phần nặng chạy ở canvas và Web Worker nên kích thước React không đáng kể</span><span lang="en">The largest ecosystem, easy to maintain; the heavy work runs in canvas and Web Workers, so React&#x27;s size hardly matters</span></dd><dt><span lang="vi">Phương án đã loại</span><span lang="en">Rejected alternative</span></dt><dd><span lang="vi">Svelte 5, Preact, SolidJS (nhẹ hơn nhưng hệ sinh thái nhỏ hơn)</span><span lang="en">Svelte 5, Preact, SolidJS (lighter but a smaller ecosystem)</span></dd></dl></article>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span><span lang="vi">Cách kiểm chứng</span><span lang="en">How it is verified</span></h2>
+    <ul lang="vi"><li>2529 test tự động trong 89 file; lõi quay còn được thử bằng cài lỗi cố ý: 1036/1036 lỗi bị bắt ở lần chạy đủ gần nhất (12/11/2026).</li><li>Bộ kiểm quy tắc có 21 kiểm tra và tự được thử bằng 40 lỗi cài cố ý (gọi mạng sai chỗ, host lạ, thư viện GPL...): mỗi lỗi phải làm đúng một kiểm tra báo đỏ.</li><li>Khả năng của Chrome, Edge và WebView2 được đo trên một trang đo riêng trước khi viết lõi quay; phần bản quay mất khi tab bị đóng đột ngột dưới 1 giây (đo thật, 31/10/2026).</li></ul><ul lang="en"><li>2529 automated tests in 89 files; the recording core is also tried with planted mistakes: 1036/1036 caught in the last full run (2026-11-12).</li><li>The rule checker has 21 checks and is itself tested with 40 planted mistakes (network call in the wrong file, unknown host, GPL library...): each must turn exactly one check red.</li><li>The capabilities of Chrome, Edge and WebView2 were measured on a separate probe page before the recording core was written; the recording lost when a tab is killed abruptly is under 1 second (measured for real, 2026-10-31).</li></ul>
+  </section>
+</main>
+<footer>
+  <p><span lang="vi">Mã nguồn các sản phẩm nằm ở kho riêng tư.</span><span lang="en">Source code is kept in private repositories.</span></p>
+  <p><span lang="vi">Liên hệ</span><span lang="en">Contact</span>: <a href="https://www.facebook.com/Exomaly">Facebook</a> · <a href="https://zalo.me/0334934592">Zalo</a></p>
+  <p class="brand">Truong Dang Khoa — Exomaly</p>
+</footer>
+</body>
+</html>
